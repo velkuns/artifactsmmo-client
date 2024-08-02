@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Eureka\Component\Template\Tests;
+namespace Velkuns\Component\ArtifactsMMP\Client\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 

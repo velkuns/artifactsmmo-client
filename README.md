@@ -1,9 +1,9 @@
-# component-template
-[![Current version](https://img.shields.io/packagist/v/eureka/component-template.svg?logo=composer)](https://packagist.org/packages/eureka/component-template)
-[![Supported PHP version](https://img.shields.io/static/v1?logo=php&label=PHP&message=7.4%20-%208.2&color=777bb4)](https://packagist.org/packages/eureka/component-template)
-![CI](https://github.com/eureka-framework/component-template/workflows/CI/badge.svg)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=eureka-framework_component-template&metric=alert_status)](https://sonarcloud.io/dashboard?id=eureka-framework_component-template)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=eureka-framework_component-template&metric=coverage)](https://sonarcloud.io/dashboard?id=eureka-framework_component-template)
+²# artifactsmmo-client
+[![Current version](https://img.shields.io/packagist/v/eureka/artifactsmmo-client.svg?logo=composer)](https://packagist.org/packages/eureka/artifactsmmo-client)
+[![Supported PHP version](https://img.shields.io/static/v1?logo=php&label=PHP&message=7.4%20-%208.2&color=777bb4)](https://packagist.org/packages/eureka/artifactsmmo-client)
+![CI](https://github.com/velkuns/artifactsmmo-client/workflows/CI/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=velkuns_artifactsmmo-client&metric=alert_status)](https://sonarcloud.io/dashboard?id=velkuns_artifactsmmo-client)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=velkuns_artifactsmmo-client&metric=coverage)](https://sonarcloud.io/dashboard?id=velkuns_artifactsmmo-client)
 
 ## Why?
 
@@ -16,7 +16,7 @@ Template for new components
 If you wish to install it in your project, require it via composer:
 
 ```bash
-composer require eureka/component-template
+composer require velkuns/artifactsmmo-client
 ```
 
 
@@ -71,7 +71,7 @@ make phpcs
 
 You also can run code style fixes with following commands:
 ```bash
-make phpcbf
+make phpcsf
 ```
 
 #### Static Analysis
@@ -82,12 +82,12 @@ make analyze
 
 Minimal supported version:
 ```bash
-make php74compatibility
+make php-min-compatibility
 ```
 
 Maximal supported version:
 ```bash
-make php82compatibility
+make php-max-compatibility
 ```
 
 #### CI Simulation

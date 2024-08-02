@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ```yaml
 ## [tag] - YYYY-MM-DD
-[tag]: https://github.com/eureka-framework/component-template/compare/1.0.0...master
+[tag]: https://github.com/velkuns/artifactsmmo-client/compare/1.0.0...master
 ### Changed
 - Change 1
 ### Added
@@ -17,23 +17,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ----
 
-## [1.1.0] - 2023-03-15
-### Changed
-- Update Makefile
-- Update CI GitHub Action
-- Update composer.json
-- Now compatible with PHP 8.2
-
-## [1.0.2] - 2022-11-13
-### Changed
-- Update Makefile
-- Update CI GitHub Action
-- Update composer.json
-
-## [1.0.1] - 2022-06-12
-### Changed
-- Fix changelog template link
-- Update github workflow ci file
 
 ## [1.0.0] - 2022-06-12
 ### Added

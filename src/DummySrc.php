@@ -9,13 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Eureka\Component\Template;
+namespace Velkuns\Component\ArtifactsMMO\Client;
 
-/**
- * DataMapper Data abstract class.
- *
- * @author Romain Cottard
- */
 class DummySrc
 {
+    public function __construct() {}
 }

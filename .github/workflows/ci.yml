@@ -10,25 +10,45 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: [ '8.1', '8.2', '8.3' ]
 
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # To avoid "Shallow clone detected" error in SonarCloud report
 
-      - name: Validate composer.json and composer.lock
-        run: composer validate
-
-      - name: Cache Composer dependencies
-        id: composer-cache
-        uses: actions/cache@v3
+      #~ PHP Setup
+      - name: Setup PHP ${{ matrix.php-versions }}
+        uses: shivammathur/setup-php@v2
         with:
-          path: /tmp/composer-cache
+          php-version: ${{ matrix.php-versions }}
+
+      #~ Composer Cache
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      #~ Composer install
+      - name: Validate composer.json
+        run: composer validate
 
       - name: Install dependencies
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: make install
+
+      #~ CI part
+      - name: Dependencies
+        run: make deps
 
       - name: Check Code Style
         run: make phpcs
@@ -41,17 +61,17 @@ jobs:
           sed -i 's+'$GITHUB_WORKSPACE'+/github/workspace+g' build/reports/phpunit/clover.xml
           sed -i 's+'$GITHUB_WORKSPACE'+/github/workspace+g' build/reports/phpunit/unit.xml
 
-      - name: PHP 7.4 Compatibility
-        run: make php74compatibility
+      - name: PHP 8.1 Compatibility
+        run: make php-min-compatibility
 
-      - name: PHP 8.2 Compatibility
-        run: make php82compatibility
+      - name: PHP 8.3 Compatibility
+        run: make php-max-compatibility
 
       - name: PHP Static Analyze
         run: make analyze
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v1.7
+        uses: SonarSource/sonarcloud-github-action@v2.1.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
