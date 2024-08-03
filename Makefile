@@ -20,7 +20,7 @@ install:
 update:
 	$(call header,Composer Update)
 	@${COMPOSER_BIN} update
-	@${COMPOSER_BIN} bump
+	@${COMPOSER_BIN} bump --dev-only
 
 outdated:
 	$(call header,Composer Outdated)
