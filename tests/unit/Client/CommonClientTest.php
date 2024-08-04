@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\Component\ArtifactsMMO\Tests\Unit\Client;
+namespace Velkuns\ArtifactsMMO\Tests\Unit\Client;
 
-use Velkuns\Component\ArtifactsMMO\Client\AbstractClient;
-use Velkuns\Component\ArtifactsMMO\Exception\ArtifactsMMOClientException;
-use Velkuns\Component\ArtifactsMMO\Formatter\FormatterInterface;
-use Velkuns\Component\ArtifactsMMO\Request\RequestBuilder;
+use Velkuns\ArtifactsMMO\Client\AbstractClient;
+use Velkuns\ArtifactsMMO\Exception\ArtifactsMMOClientException;
+use Velkuns\ArtifactsMMO\Formatter\FormatterInterface;
+use Velkuns\ArtifactsMMO\Request\RequestBuilder;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
@@ -121,7 +121,7 @@ class CommonClientTest extends TestCase
      * @param int $httpCode
      * @param string $content
      * @param ClientExceptionInterface|null $exception
-     * @return AbstractClient|object
+     * @return AbstractClient&object
      * @throws Exception
      */
     private function getMockClient(int $httpCode, string $content = '', ?ClientExceptionInterface $exception = null)
@@ -134,7 +134,7 @@ class CommonClientTest extends TestCase
             /**
              * @return int|array<mixed>|mixed|string|null
              */
-            public function getEndpoint()
+            public function getEndpoint(): mixed
             {
                 $request = $this->getRequestBuilder()
                     ->build('/mock-endpoint')

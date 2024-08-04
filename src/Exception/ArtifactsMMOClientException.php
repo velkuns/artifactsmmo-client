@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\Component\ArtifactsMMO\Exception;
+namespace Velkuns\ArtifactsMMO\Exception;
 
 use Psr\Http\Client\ClientExceptionInterface;
 

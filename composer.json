@@ -14,13 +14,13 @@
 
   "autoload": {
     "psr-4": {
-      "Velkuns\\Component\\ArtifactsMMO\\": "./src",
-      "Velkuns\\Component\\ArtifactsMMO\\Script\\": "./scripts"
+      "Velkuns\\ArtifactsMMO\\": "./src",
+      "Velkuns\\ArtifactsMMO\\Script\\": "./scripts"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Velkuns\\Component\\ArtifactsMMO\\Tests\\Unit\\": "./tests/unit"
+      "Velkuns\\ArtifactsMMO\\Tests\\Unit\\": "./tests/unit"
     }
   },
 
@@ -43,6 +43,7 @@
     "eureka/component-console": "^6.1.0",
     "friendsofphp/php-cs-fixer": "^3.61.1",
     "maglnet/composer-require-checker": "^4.7.1",
+    "nikic/php-parser": "^4.19.1",
     "nyholm/psr7": "^1.8.1",
     "phpstan/phpstan": "^1.11.9",
     "phpstan/phpstan-phpunit": "^1.4.0",

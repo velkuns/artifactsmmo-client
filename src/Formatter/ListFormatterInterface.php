@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\Component\ArtifactsMMO\Formatter;
+namespace Velkuns\ArtifactsMMO\Formatter;
 
 /**
  * @template TEntity

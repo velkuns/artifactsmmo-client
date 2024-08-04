@@ -9,6 +9,6 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\Component\ArtifactsMMO\Exception;
+namespace Velkuns\ArtifactsMMO\Exception;
 
 class ArtifactsMMOConfigException extends ArtifactsMMOComponentException {}

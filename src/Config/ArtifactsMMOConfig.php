@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\Component\ArtifactsMMO\Config;
+namespace Velkuns\ArtifactsMMO\Config;
 
-use Velkuns\Component\ArtifactsMMO\Exception\ArtifactsMMOConfigException;
+use Velkuns\ArtifactsMMO\Exception\ArtifactsMMOConfigException;
 
 class ArtifactsMMOConfig
 {

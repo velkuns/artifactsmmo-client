@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\Component\ArtifactsMMO\Tests\Unit\Request;
+namespace Velkuns\ArtifactsMMO\Tests\Unit\Request;
 
-use Velkuns\Component\ArtifactsMMO\Config\ArtifactsMMOConfig;
-use Velkuns\Component\ArtifactsMMO\Exception\ArtifactsMMOComponentException;
-use Velkuns\Component\ArtifactsMMO\Request\RequestBuilder;
+use Velkuns\ArtifactsMMO\Config\ArtifactsMMOConfig;
+use Velkuns\ArtifactsMMO\Exception\ArtifactsMMOComponentException;
+use Velkuns\ArtifactsMMO\Request\RequestBuilder;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 

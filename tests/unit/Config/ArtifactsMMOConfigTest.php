@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\Component\ArtifactsMMO\Tests\Unit\Config;
+namespace Velkuns\ArtifactsMMO\Tests\Unit\Config;
 
-use Velkuns\Component\ArtifactsMMO\Config\ArtifactsMMOConfig;
-use Velkuns\Component\ArtifactsMMO\Exception\ArtifactsMMOConfigException;
+use Velkuns\ArtifactsMMO\Config\ArtifactsMMOConfig;
+use Velkuns\ArtifactsMMO\Exception\ArtifactsMMOConfigException;
 use PHPUnit\Framework\TestCase;
 
 class ArtifactsMMOConfigTest extends TestCase

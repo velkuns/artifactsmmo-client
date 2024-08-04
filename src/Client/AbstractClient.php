@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\Component\ArtifactsMMO\Client;
+namespace Velkuns\ArtifactsMMO\Client;
 
-use Velkuns\Component\ArtifactsMMO\Exception\ArtifactsMMOClientException;
-use Velkuns\Component\ArtifactsMMO\Formatter\FormatterInterface;
-use Velkuns\Component\ArtifactsMMO\Formatter\ListFormatterInterface;
-use Velkuns\Component\ArtifactsMMO\Request\RequestBuilder;
+use Velkuns\ArtifactsMMO\Exception\ArtifactsMMOClientException;
+use Velkuns\ArtifactsMMO\Formatter\FormatterInterface;
+use Velkuns\ArtifactsMMO\Formatter\ListFormatterInterface;
+use Velkuns\ArtifactsMMO\Request\RequestBuilder;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;

@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\Component\ArtifactsMMO\Request;
+namespace Velkuns\ArtifactsMMO\Request;
 
-use Velkuns\Component\ArtifactsMMO\Config\ArtifactsMMOConfig;
-use Velkuns\Component\ArtifactsMMO\Exception\ArtifactsMMOComponentException;
+use Velkuns\ArtifactsMMO\Config\ArtifactsMMOConfig;
+use Velkuns\ArtifactsMMO\Exception\ArtifactsMMOComponentException;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\UriFactoryInterface;
