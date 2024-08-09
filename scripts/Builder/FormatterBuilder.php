@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\Builder;
+namespace Velkuns\ArtifactsMMO\Script\Builder;
 
 use cebe\openapi\spec\Schema;
 use PhpParser\BuilderFactory;
@@ -19,9 +19,9 @@ use PhpParser\Node\Scalar\LNumber;
 use PhpParser\Node\Stmt\Declare_;
 use PhpParser\Node\Stmt\DeclareDeclare;
 use PhpParser\Node\Stmt\TraitUse;
-use Velkuns\ArtifactsMMO\Builder\Builder\FormatterClass;
-use Velkuns\ArtifactsMMO\Builder\Printer\CustomStandard;
-use Velkuns\ArtifactsMMO\Builder\Traits\HelperTrait;
+use Velkuns\ArtifactsMMO\Script\Builder\Builder\FormatterClass;
+use Velkuns\ArtifactsMMO\Script\Builder\Printer\CustomStandard;
+use Velkuns\ArtifactsMMO\Script\Builder\Traits\HelperTrait;
 
 class FormatterBuilder implements BuilderInterface
 {

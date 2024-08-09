@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\Builder;
+namespace Velkuns\ArtifactsMMO\Script\Builder;
 
 use cebe\openapi\spec\Schema;
 

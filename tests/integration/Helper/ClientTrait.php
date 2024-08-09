@@ -38,6 +38,6 @@ trait ClientTrait
 
     private static function getRequestBuilder(ArtifactsMMOConfig $config): RequestBuilder
     {
-        return new RequestBuilder(static::getRequestFactory(), static::getUriFactory(), $config);
+        return new RequestBuilder(self::getRequestFactory(), self::getUriFactory(), $config);
     }
 }

@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\Builder\Enum;
+namespace Velkuns\ArtifactsMMO\Script\Builder\Enum;
 
 enum OperationType: string
 {

@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\Builder;
+namespace Velkuns\ArtifactsMMO\Script\Builder;
 
 use cebe\openapi\spec\Schema;
 use PhpParser\Builder\Class_;
@@ -18,11 +18,11 @@ use PhpParser\Comment\Doc;
 use PhpParser\Node\Scalar\LNumber;
 use PhpParser\Node\Stmt\Declare_;
 use PhpParser\Node\Stmt\DeclareDeclare;
-use Velkuns\ArtifactsMMO\Builder\Builder\VOClass;
-use Velkuns\ArtifactsMMO\Builder\Printer\CustomStandard;
-use Velkuns\ArtifactsMMO\Builder\Traits\HelperTrait;
+use Velkuns\ArtifactsMMO\Script\Builder\Builder\VOClass;
+use Velkuns\ArtifactsMMO\Script\Builder\Printer\CustomStandard;
+use Velkuns\ArtifactsMMO\Script\Builder\Traits\HelperTrait;
 
-class VOBuilder implements BuilderInterface
+class BodyVOBuilder implements BuilderInterface
 {
     use HelperTrait;
 
@@ -40,13 +40,13 @@ class VOBuilder implements BuilderInterface
 
         foreach ($this->vos as $className => $class) {
             $namespace = $this->factory
-                ->namespace('Velkuns\ArtifactsMMO\VO')
+                ->namespace('Velkuns\ArtifactsMMO\VO\Body')
                 ->addStmt($this->factory->use('Eureka\Component\Serializer\JsonSerializableTrait'))
                 ->addStmt($this->factory->use('JsonSerializable'))
                 ->setDocComment(new Doc(''))
                 ->addStmt($class);
             $content   = $prettyPrinter->prettyPrintFile([$declare, $namespace->getNode()]);
-            \file_put_contents(__DIR__ . "/../../src/VO/$className.php", $content);
+            \file_put_contents(__DIR__ . "/../../src/VO/Body/$className.php", $content);
         }
     }
 
@@ -57,12 +57,11 @@ class VOBuilder implements BuilderInterface
         }
 
         $this->vos[$return] = (new VOClass($return))
-            ->setBuilder($this)
             ->implement('JsonSerializable')
             ->addStmt($this->factory->useTrait('JsonSerializableTrait'))
+            ->setDocComment(new Doc(''))
             ->addConstructor($schema)
             ->addJsonSerializeMethod($schema)
-            ->setDocComment(new Doc(''))
         ;
     }
 }

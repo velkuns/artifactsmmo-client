@@ -22,12 +22,12 @@ use Eureka\Component\Console\Help;
 use Eureka\Component\Console\Option\Option;
 use Eureka\Component\Console\Option\Options;
 use PhpParser\BuilderFactory;
-use Velkuns\ArtifactsMMO\Builder\BodyVOBuilder;
-use Velkuns\ArtifactsMMO\Builder\ClientBuilder;
-use Velkuns\ArtifactsMMO\Builder\Enum\OperationType;
-use Velkuns\ArtifactsMMO\Builder\FormatterBuilder;
-use Velkuns\ArtifactsMMO\Builder\Traits\HelperTrait;
-use Velkuns\ArtifactsMMO\Builder\VOBuilder;
+use Velkuns\ArtifactsMMO\Script\Builder\BodyVOBuilder;
+use Velkuns\ArtifactsMMO\Script\Builder\ClientBuilder;
+use Velkuns\ArtifactsMMO\Script\Builder\Enum\OperationType;
+use Velkuns\ArtifactsMMO\Script\Builder\FormatterBuilder;
+use Velkuns\ArtifactsMMO\Script\Builder\Traits\HelperTrait;
+use Velkuns\ArtifactsMMO\Script\Builder\VOBuilder;
 
 class Generator extends AbstractScript
 {

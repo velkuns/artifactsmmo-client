@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\Builder\Builder;
+namespace Velkuns\ArtifactsMMO\Script\Builder\Builder;
 
 use cebe\openapi\spec\Reference;
 use cebe\openapi\spec\Schema;
@@ -20,9 +20,8 @@ use PhpParser\Comment\Doc;
 use PhpParser\Node\Expr\Array_;
 use PhpParser\Node\Expr\ArrayItem;
 use PhpParser\Node\Stmt\Return_;
-use Velkuns\ArtifactsMMO\Builder\BuilderInterface;
-use Velkuns\ArtifactsMMO\Builder\Traits\HelperTrait;
-use Velkuns\ArtifactsMMO\Builder\VOBuilder;
+use Velkuns\ArtifactsMMO\Script\Builder\BuilderInterface;
+use Velkuns\ArtifactsMMO\Script\Builder\Traits\HelperTrait;
 
 class VOClass extends Class_
 {

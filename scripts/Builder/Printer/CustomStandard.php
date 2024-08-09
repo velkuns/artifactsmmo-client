@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\Builder\Printer;
+namespace Velkuns\ArtifactsMMO\Script\Builder\Printer;
 
 use PhpParser\PrettyPrinter\Standard;
 use PhpParser\Node\Expr;

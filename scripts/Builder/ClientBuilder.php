@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\Builder;
+namespace Velkuns\ArtifactsMMO\Script\Builder;
 
 use cebe\openapi\spec\Operation;
 use cebe\openapi\spec\Parameter;
@@ -23,9 +23,9 @@ use PhpParser\Comment\Doc;
 use PhpParser\Node\Scalar\LNumber;
 use PhpParser\Node\Stmt\Declare_;
 use PhpParser\Node\Stmt\DeclareDeclare;
-use Velkuns\ArtifactsMMO\Builder\Builder\ClientMethod;
-use Velkuns\ArtifactsMMO\Builder\Enum\OperationType;
-use Velkuns\ArtifactsMMO\Builder\Printer\CustomStandard;
+use Velkuns\ArtifactsMMO\Script\Builder\Builder\ClientMethod;
+use Velkuns\ArtifactsMMO\Script\Builder\Enum\OperationType;
+use Velkuns\ArtifactsMMO\Script\Builder\Printer\CustomStandard;
 
 class ClientBuilder
 {

@@ -57,7 +57,7 @@ class RequestBuilderTest extends TestCase
      */
     public function testICanBuildSimplePostRequestWithParams(): void
     {
-        $request = $this->requestBuilder->build('/user/curator/198225115', ['filter' => 0], method: 'POST');
+        $request = $this->requestBuilder->build('/user/curator/198225115', body: ['filter' => 0], method: 'POST');
 
         $this->assertEquals('https://example.com/user/curator/198225115', (string) $request->getUri());
         $this->assertEquals('{"filter":0}', (string) $request->getBody());

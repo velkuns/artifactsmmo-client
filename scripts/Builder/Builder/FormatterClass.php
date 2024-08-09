@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\Builder\Builder;
+namespace Velkuns\ArtifactsMMO\Script\Builder\Builder;
 
 use cebe\openapi\spec\Reference;
 use cebe\openapi\spec\Schema;
@@ -24,8 +24,8 @@ use PhpParser\Node\Expr\Ternary;
 use PhpParser\Node\Expr\Variable;
 use PhpParser\Node\Name;
 use PhpParser\Node\Stmt\Return_;
-use Velkuns\ArtifactsMMO\Builder\BuilderInterface;
-use Velkuns\ArtifactsMMO\Builder\Traits\HelperTrait;
+use Velkuns\ArtifactsMMO\Script\Builder\BuilderInterface;
+use Velkuns\ArtifactsMMO\Script\Builder\Traits\HelperTrait;
 
 class FormatterClass extends Class_
 {

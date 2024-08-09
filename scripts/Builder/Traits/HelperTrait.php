@@ -9,13 +9,13 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\Builder\Traits;
+namespace Velkuns\ArtifactsMMO\Script\Builder\Traits;
 
 use cebe\openapi\spec\Operation;
 use cebe\openapi\spec\Reference;
 use cebe\openapi\spec\Response;
 use cebe\openapi\spec\Schema;
-use Velkuns\ArtifactsMMO\Builder\BuilderInterface;
+use Velkuns\ArtifactsMMO\Script\Builder\BuilderInterface;
 
 trait HelperTrait
 {

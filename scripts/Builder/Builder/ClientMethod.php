@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\Builder\Builder;
+namespace Velkuns\ArtifactsMMO\Script\Builder\Builder;
 
 use cebe\openapi\spec\Parameter;
 use PhpParser\Builder\Method;
 use PhpParser\BuilderFactory;
 use PhpParser\Node\Expr\Assign;
 use PhpParser\Node\Stmt\Return_;
-use Velkuns\ArtifactsMMO\Builder\Enum\OperationType;
+use Velkuns\ArtifactsMMO\Script\Builder\Enum\OperationType;
 
 class ClientMethod extends Method
 {

@@ -18,4 +18,4 @@ parameters:
     - message: '`Call to an undefined method Velkuns\\ArtifactsMMO\\Client\\AbstractClient::getEndpoint.+`'
       path:    './tests/unit/Client/CommonClientTest.php'
     - message: '`.*`'
-      path:    './src/Builder/Printer/CustomStandard.php'
+      path:    './scripts/Builder/Printer/CustomStandard.php'
