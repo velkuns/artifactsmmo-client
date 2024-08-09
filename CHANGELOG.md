@@ -18,10 +18,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ----
 
 
-## [1.0.0] - 2022-06-12
+## [1.0.0] - 2024-08-09
 ### Added
-- Add phpstan for static analyze & php compatibility
-- Add Check compatibility with PHP 7.4 & 8.1 in CI
-- Add Makefile & .dist files for CI
-- Add Dummy Source & Dummy Test
-- Add GitHub CI file & sonar project file
+- Builder to generate Client, Formatter & VOs
+- Base Abstract Client, Formatter interface & Formatter trait
+- Script to generate code
+- All CI config
+- Some sample code & tests
