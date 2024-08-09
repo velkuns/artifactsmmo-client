@@ -14,6 +14,13 @@ define header =
 endef
 
 #~ Composer dependency
+build: generator phpcsf
+
+generator:
+	$(call header,"Build new version of client, formatter & VO")
+	@./bin/script generator --file="./data/openapi.json" --debug
+
+#~ Composer dependency
 validate:
 	$(call header,Composer Validation)
 	@${COMPOSER_BIN} validate
