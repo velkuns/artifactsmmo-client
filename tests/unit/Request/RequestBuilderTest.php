@@ -57,7 +57,7 @@ class RequestBuilderTest extends TestCase
      */
     public function testICanBuildSimplePostRequestWithParams(): void
     {
-        $request = $this->requestBuilder->build('/user/curator/198225115', ['filter' => 0], 'POST');
+        $request = $this->requestBuilder->build('/user/curator/198225115', ['filter' => 0], method: 'POST');
 
         $this->assertEquals('https://example.com/user/curator/198225115', (string) $request->getUri());
         $this->assertEquals('{"filter":0}', (string) $request->getBody());
@@ -72,7 +72,7 @@ class RequestBuilderTest extends TestCase
     {
         $this->expectException(ArtifactsMMOComponentException::class);
 
-        $this->requestBuilder->build('', ['filter' => 0], 'POST');
+        $this->requestBuilder->build('', ['filter' => 0], method: 'POST');
     }
 
     /**

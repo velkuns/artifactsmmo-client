@@ -9,6 +9,7 @@ composer.lock
 
 #~ Misc
 .idea
+.env
 
 #~ Overridden condigs
 phpstan.neon

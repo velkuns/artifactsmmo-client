@@ -16,18 +16,23 @@ use cebe\openapi\exceptions\TypeErrorException;
 use cebe\openapi\exceptions\UnresolvableReferenceException;
 use cebe\openapi\json\InvalidJsonPointerSyntaxException;
 use cebe\openapi\Reader;
-use cebe\openapi\spec\PathItem;
+use cebe\openapi\spec\Reference;
 use Eureka\Component\Console\AbstractScript;
-use Eureka\Component\Console\Color\Bit8StandardColor;
 use Eureka\Component\Console\Help;
 use Eureka\Component\Console\Option\Option;
 use Eureka\Component\Console\Option\Options;
-use Eureka\Component\Console\Style\Style;
 use PhpParser\BuilderFactory;
-use Velkuns\ArtifactsMMO\Generator\ClientGenerator;
+use Velkuns\ArtifactsMMO\Builder\BodyVOBuilder;
+use Velkuns\ArtifactsMMO\Builder\ClientBuilder;
+use Velkuns\ArtifactsMMO\Builder\Enum\OperationType;
+use Velkuns\ArtifactsMMO\Builder\FormatterBuilder;
+use Velkuns\ArtifactsMMO\Builder\Traits\HelperTrait;
+use Velkuns\ArtifactsMMO\Builder\VOBuilder;
 
 class Generator extends AbstractScript
 {
+    use HelperTrait;
+
     public function __construct(
     ) {
         $this->setDescription('Orm generator');
@@ -42,8 +47,8 @@ class Generator extends AbstractScript
                         description: 'OpenAPI file to process',
                         mandatory: true,
                         hasArgument: true,
-                    )
-                )
+                    ),
+                ),
         );
     }
 
@@ -65,13 +70,44 @@ class Generator extends AbstractScript
             throw new \UnexpectedValueException('Cannot found file');
         }
 
+        $clientBuilder    = new ClientBuilder(new BuilderFactory());
+        $formatterBuilder = new FormatterBuilder(new BuilderFactory());
+        $voBuilder        = new VOBuilder(new BuilderFactory());
+        $bodyVoBuilder    = new BodyVOBuilder(new BuilderFactory());
+
         $openapi = Reader::readFromJsonFile((string) \realpath($file));
+        $paths   = $openapi->paths->getPaths();
+        foreach ($paths as $path => $pathItem) {
+            $clientBuilder->add($path, $pathItem);
+        }
 
-        $paths = $openapi->paths->getPaths();
-        /** @var PathItem $pathItem */
-        $pathItem  = reset($paths);
-        $path      = key($paths);
+        foreach ($paths as $pathItem) {
+            foreach (OperationType::cases() as $operationType) {
+                if (empty($pathItem->{$operationType->value})) {
+                    continue;
+                }
 
-        (new ClientGenerator(new BuilderFactory()))->generate($path, $pathItem);
+                $operation = $pathItem->{$operationType->value};
+
+                ['schema' => $schema, 'type' => $type, 'return' => $return] = $this->getInfo($operation);
+                if (empty($schema) || $schema instanceof Reference) {
+                    var_dump($schema);
+                    throw new \UnexpectedValueException('Only Schema type is supported!');
+                }
+                $formatterBuilder->add($schema, $return, $type);
+                $voBuilder->add($schema, $return);
+
+                ['schema' => $schema, 'return' => $return] = $this->getBodyInfo($operation);
+                if (empty($schema) || $schema instanceof Reference) {
+                    continue;
+                }
+                $bodyVoBuilder->add($schema, $return);
+            }
+        }
+
+        $clientBuilder->generate();
+        $formatterBuilder->generate();
+        $voBuilder->generate();
+        $bodyVoBuilder->generate();
     }
 }

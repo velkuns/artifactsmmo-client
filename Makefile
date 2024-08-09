@@ -4,6 +4,11 @@ PHP_MIN_VERSION := "8.1"
 PHP_MAX_VERSION := "8.3"
 COMPOSER_BIN := composer
 
+ifneq (,$(wildcard ./.env))
+	include .env
+	export
+endif
+
 define header =
     @if [ -t 1 ]; then printf "\n\e[37m\e[100m  \e[104m $(1) \e[0m\n"; else printf "\n### $(1)\n"; fi
 endef

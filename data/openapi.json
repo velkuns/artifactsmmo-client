@@ -3,7 +3,7 @@
     "info": {
         "title": "Artifacts API",
         "description": "\nArtifacts is an API-based MMO game where you can manage 5 characters to explore, fight, gather resources, craft items and much more.\n\nWebsite: https://artifactsmmo.com/\n\nDocumentation: https://docs.artifactsmmo.com/\n\nOpenAPI Spec: https://api.artifactsmmo.com/openapi.json\n",
-        "version": "1.3"
+        "version": "1.6"
     },
     "paths": {
         "/my/{name}/action/move": {
@@ -67,7 +67,7 @@
                         "description": "Map not found."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     }
                 }
             }
@@ -130,7 +130,7 @@
                         "description": "Character in cooldown."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "478": {
                         "description": "Missing item or insufficient quantity in your inventory."
@@ -205,7 +205,7 @@
                         "description": "Character in cooldown."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "491": {
                         "description": "Slot is empty."
@@ -264,7 +264,7 @@
                         "description": "Monster not found on this map."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "497": {
                         "description": "Character inventory is full."
@@ -320,7 +320,7 @@
                         "description": "Resource not found on this map."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "493": {
                         "description": "Not skill level required."
@@ -395,7 +395,7 @@
                         "description": "Character in cooldown."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "493": {
                         "description": "Not skill level required."
@@ -460,6 +460,9 @@
                     "404": {
                         "description": "Item not found."
                     },
+                    "461": {
+                        "description": "A transaction is already in progress with this item/your golds in your bank."
+                    },
                     "498": {
                         "description": "Character not found."
                     },
@@ -467,7 +470,7 @@
                         "description": "Character in cooldown."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "478": {
                         "description": "Missing item or insufficient quantity in your inventory."
@@ -535,11 +538,11 @@
                     "499": {
                         "description": "Character in cooldown."
                     },
-                    "486": {
-                        "description": "Character is locked. Action is already in progress."
+                    "461": {
+                        "description": "A transaction is already in progress with this item/your golds in your bank."
                     },
-                    "478": {
-                        "description": "Missing item or insufficient quantity in your inventory."
+                    "486": {
+                        "description": "An action is already in progress by your character."
                     }
                 }
             }
@@ -608,7 +611,7 @@
                         "description": "Character in cooldown."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "493": {
                         "description": "Not skill level required."
@@ -679,8 +682,11 @@
                     "499": {
                         "description": "Character in cooldown."
                     },
+                    "461": {
+                        "description": "A transaction is already in progress with this item/your golds in your bank."
+                    },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "497": {
                         "description": "Character inventory is full."
@@ -748,8 +754,11 @@
                     "499": {
                         "description": "Character in cooldown."
                     },
+                    "461": {
+                        "description": "A transaction is already in progress with this item/your golds in your bank."
+                    },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "598": {
                         "description": "Bank not found on this map."
@@ -820,8 +829,11 @@
                     "499": {
                         "description": "Character in cooldown."
                     },
+                    "483": {
+                        "description": "A transaction is already in progress on this item by a another character."
+                    },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "492": {
                         "description": "Insufficient golds on your character."
@@ -892,8 +904,11 @@
                     "404": {
                         "description": "Item not found."
                     },
+                    "483": {
+                        "description": "A transaction is already in progress on this item by a another character."
+                    },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "478": {
                         "description": "Missing item or insufficient quantity in your inventory."
@@ -952,7 +967,7 @@
                         "description": "Character in cooldown."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "598": {
                         "description": "Tasks Master not found on this map."
@@ -1008,7 +1023,7 @@
                         "description": "Character in cooldown."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "598": {
                         "description": "Tasks Master not found on this map."
@@ -1070,7 +1085,7 @@
                         "description": "Character in cooldown."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "598": {
                         "description": "Tasks Master not found on this map."
@@ -1139,84 +1154,10 @@
                         "description": "Character in cooldown."
                     },
                     "486": {
-                        "description": "Character is locked. Action is already in progress."
+                        "description": "An action is already in progress by your character."
                     },
                     "478": {
                         "description": "Missing item or insufficient quantity in your inventory."
-                    }
-                }
-            }
-        },
-        "/my/{name}/logs": {
-            "get": {
-                "tags": [
-                    "My characters"
-                ],
-                "summary": "Get Character Logs",
-                "description": "History of your character's last 100 actions.",
-                "operationId": "get_character_logs_my__name__logs_get",
-                "security": [
-                    {
-                        "JWTBearer": []
-                    }
-                ],
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "pattern": "^[a-zA-Z0-9_-]+$",
-                            "title": "Character name",
-                            "description": "Name of your character."
-                        },
-                        "description": "Name of your character."
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "minimum": 1,
-                            "description": "Page number",
-                            "default": 1,
-                            "title": "Page"
-                        },
-                        "description": "Page number"
-                    },
-                    {
-                        "name": "size",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "maximum": 100,
-                            "minimum": 1,
-                            "description": "Page size",
-                            "default": 50,
-                            "title": "Size"
-                        },
-                        "description": "Page size"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successfully fetched logs.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/DataPage_LogSchema_"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Logs not found."
-                    },
-                    "498": {
-                        "description": "Character not found."
                     }
                 }
             }
@@ -1276,6 +1217,9 @@
                     },
                     "404": {
                         "description": "Logs not found."
+                    },
+                    "498": {
+                        "description": "Character not found."
                     }
                 }
             }
@@ -1491,6 +1435,46 @@
                 ]
             }
         },
+        "/characters/delete": {
+            "post": {
+                "tags": [
+                    "Characters"
+                ],
+                "summary": "Delete Character",
+                "description": "Delete character on your account.",
+                "operationId": "delete_character_characters_delete_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeleteCharacterSchema"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully deleted character.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CharacterResponseSchema"
+                                }
+                            }
+                        }
+                    },
+                    "498": {
+                        "description": "Character not found."
+                    }
+                },
+                "security": [
+                    {
+                        "JWTBearer": []
+                    }
+                ]
+            }
+        },
         "/characters/": {
             "get": {
                 "tags": [
@@ -1512,13 +1496,14 @@
                                 "weaponcrafting",
                                 "gearcrafting",
                                 "jewelrycrafting",
-                                "cooking"
+                                "cooking",
+                                "gold"
                             ],
                             "type": "string",
                             "title": "Sort",
-                            "description": "Default sort by total XP."
+                            "description": "Default sort by combat total XP."
                         },
-                        "description": "Default sort by total XP."
+                        "description": "Default sort by combat total XP."
                     },
                     {
                         "name": "page",
@@ -2164,9 +2149,9 @@
                 "tags": [
                     "Resources"
                 ],
-                "summary": "Get Resources",
+                "summary": "Get Resource",
                 "description": "Retrieve the details of a resource.",
-                "operationId": "get_resources_resources__code__get",
+                "operationId": "get_resource_resources__code__get",
                 "parameters": [
                     {
                         "name": "code",
@@ -2242,7 +2227,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/DataPage_EventSchema_"
+                                    "$ref": "#/components/schemas/DataPage_ActiveEventSchema_"
                                 }
                             }
                         }
@@ -2447,6 +2432,55 @@
                     "data"
                 ],
                 "title": "ActionItemBankResponseSchema"
+            },
+            "ActiveEventSchema": {
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Name",
+                        "description": "Name of the event."
+                    },
+                    "map": {
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/MapSchema"
+                            }
+                        ],
+                        "description": "Map of the event."
+                    },
+                    "previous_skin": {
+                        "type": "string",
+                        "title": "Previous Skin",
+                        "description": "Previous map skin."
+                    },
+                    "duration": {
+                        "type": "integer",
+                        "title": "Duration",
+                        "description": "Duration in minutes."
+                    },
+                    "expiration": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Expiration",
+                        "description": "Expiration datetime."
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Created At",
+                        "description": "Start datetime."
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name",
+                    "map",
+                    "previous_skin",
+                    "duration",
+                    "expiration",
+                    "created_at"
+                ],
+                "title": "ActiveEventSchema"
             },
             "AddAccountSchema": {
                 "properties": {
@@ -2691,7 +2725,7 @@
                     "destination": {
                         "allOf": [
                             {
-                                "$ref": "#/components/schemas/DestinationResponseSchema"
+                                "$ref": "#/components/schemas/MapSchema"
                             }
                         ],
                         "description": "Destination details."
@@ -2988,15 +3022,8 @@
                         "description": "Cooldown in seconds."
                     },
                     "cooldown_expiration": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "format": "date-time"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ],
+                        "type": "string",
+                        "format": "date-time",
                         "title": "Cooldown Expiration",
                         "description": "Datetime Cooldown expiration."
                     },
@@ -3112,206 +3139,6 @@
                         "type": "array",
                         "title": "Inventory",
                         "description": "List of inventory slots."
-                    },
-                    "inventory_slot1": {
-                        "type": "string",
-                        "title": "Inventory Slot1",
-                        "description": "Deprecated** Inventory slot 1."
-                    },
-                    "inventory_slot1_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot1 Quantity",
-                        "description": "Deprecated** Inventory 1 quantity."
-                    },
-                    "inventory_slot2": {
-                        "type": "string",
-                        "title": "Inventory Slot2",
-                        "description": "Deprecated** Inventory slot 2."
-                    },
-                    "inventory_slot2_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot2 Quantity",
-                        "description": "Deprecated** Inventory 2 quantity."
-                    },
-                    "inventory_slot3": {
-                        "type": "string",
-                        "title": "Inventory Slot3",
-                        "description": "Deprecated** Inventory slot 3."
-                    },
-                    "inventory_slot3_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot3 Quantity",
-                        "description": "Deprecated** Inventory 3 quantity."
-                    },
-                    "inventory_slot4": {
-                        "type": "string",
-                        "title": "Inventory Slot4",
-                        "description": "Deprecated** Inventory slot 4."
-                    },
-                    "inventory_slot4_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot4 Quantity",
-                        "description": "Deprecated** Inventory 4 quantity."
-                    },
-                    "inventory_slot5": {
-                        "type": "string",
-                        "title": "Inventory Slot5",
-                        "description": "Deprecated** Inventory slot 5."
-                    },
-                    "inventory_slot5_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot5 Quantity",
-                        "description": "Deprecated** Inventory 5 quantity."
-                    },
-                    "inventory_slot6": {
-                        "type": "string",
-                        "title": "Inventory Slot6",
-                        "description": "Deprecated** Inventory slot 6."
-                    },
-                    "inventory_slot6_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot6 Quantity",
-                        "description": "Deprecated** Inventory 6 quantity."
-                    },
-                    "inventory_slot7": {
-                        "type": "string",
-                        "title": "Inventory Slot7",
-                        "description": "Deprecated** Inventory slot 7."
-                    },
-                    "inventory_slot7_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot7 Quantity",
-                        "description": "Deprecated** Inventory 7 quantity."
-                    },
-                    "inventory_slot8": {
-                        "type": "string",
-                        "title": "Inventory Slot8",
-                        "description": "Deprecated** Inventory slot 8."
-                    },
-                    "inventory_slot8_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot8 Quantity",
-                        "description": "Deprecated** Inventory 8 quantity."
-                    },
-                    "inventory_slot9": {
-                        "type": "string",
-                        "title": "Inventory Slot9",
-                        "description": "Deprecated** Inventory slot 9."
-                    },
-                    "inventory_slot9_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot9 Quantity",
-                        "description": "Deprecated** Inventory 9 quantity."
-                    },
-                    "inventory_slot10": {
-                        "type": "string",
-                        "title": "Inventory Slot10",
-                        "description": "Deprecated** Inventory slot 10."
-                    },
-                    "inventory_slot10_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot10 Quantity",
-                        "description": "Deprecated** Inventory 10 quantity."
-                    },
-                    "inventory_slot11": {
-                        "type": "string",
-                        "title": "Inventory Slot11",
-                        "description": "Deprecated** Inventory slot 11."
-                    },
-                    "inventory_slot11_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot11 Quantity",
-                        "description": "Deprecated** Inventory 11 quantity."
-                    },
-                    "inventory_slot12": {
-                        "type": "string",
-                        "title": "Inventory Slot12",
-                        "description": "Deprecated** nventory slot 12."
-                    },
-                    "inventory_slot12_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot12 Quantity",
-                        "description": "Deprecated** Inventory 12 quantity."
-                    },
-                    "inventory_slot13": {
-                        "type": "string",
-                        "title": "Inventory Slot13",
-                        "description": "Deprecated** Inventory slot 13."
-                    },
-                    "inventory_slot13_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot13 Quantity",
-                        "description": "Deprecated** Inventory 13 quantity."
-                    },
-                    "inventory_slot14": {
-                        "type": "string",
-                        "title": "Inventory Slot14",
-                        "description": "Deprecated** Inventory slot 14."
-                    },
-                    "inventory_slot14_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot14 Quantity",
-                        "description": "Deprecated** Inventory 14 quantity."
-                    },
-                    "inventory_slot15": {
-                        "type": "string",
-                        "title": "Inventory Slot15",
-                        "description": "Deprecated** Inventory slot 15."
-                    },
-                    "inventory_slot15_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot15 Quantity",
-                        "description": "Deprecated** Inventory 15 quantity."
-                    },
-                    "inventory_slot16": {
-                        "type": "string",
-                        "title": "Inventory Slot16",
-                        "description": "Deprecated** Inventory slot 16."
-                    },
-                    "inventory_slot16_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot16 Quantity",
-                        "description": "Deprecated** Inventory 16 quantity."
-                    },
-                    "inventory_slot17": {
-                        "type": "string",
-                        "title": "Inventory Slot17",
-                        "description": "Deprecated** Inventory slot 17."
-                    },
-                    "inventory_slot17_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot17 Quantity",
-                        "description": "Deprecated** Inventory 17 quantity."
-                    },
-                    "inventory_slot18": {
-                        "type": "string",
-                        "title": "Inventory Slot18",
-                        "description": "Deprecated** Inventory slot 18."
-                    },
-                    "inventory_slot18_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot18 Quantity",
-                        "description": "Deprecated** Inventory 18 quantity."
-                    },
-                    "inventory_slot19": {
-                        "type": "string",
-                        "title": "Inventory Slot19",
-                        "description": "Deprecated** Inventory slot 19."
-                    },
-                    "inventory_slot19_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot19 Quantity",
-                        "description": "Deprecated** Inventory 19 quantity."
-                    },
-                    "inventory_slot20": {
-                        "type": "string",
-                        "title": "Inventory Slot20",
-                        "description": "Deprecated** Inventory slot 20."
-                    },
-                    "inventory_slot20_quantity": {
-                        "type": "integer",
-                        "title": "Inventory Slot20 Quantity",
-                        "description": "Deprecated** Inventory 20 quantity."
                     }
                 },
                 "type": "object",
@@ -3384,47 +3211,7 @@
                     "task_type",
                     "task_progress",
                     "task_total",
-                    "inventory_max_items",
-                    "inventory_slot1",
-                    "inventory_slot1_quantity",
-                    "inventory_slot2",
-                    "inventory_slot2_quantity",
-                    "inventory_slot3",
-                    "inventory_slot3_quantity",
-                    "inventory_slot4",
-                    "inventory_slot4_quantity",
-                    "inventory_slot5",
-                    "inventory_slot5_quantity",
-                    "inventory_slot6",
-                    "inventory_slot6_quantity",
-                    "inventory_slot7",
-                    "inventory_slot7_quantity",
-                    "inventory_slot8",
-                    "inventory_slot8_quantity",
-                    "inventory_slot9",
-                    "inventory_slot9_quantity",
-                    "inventory_slot10",
-                    "inventory_slot10_quantity",
-                    "inventory_slot11",
-                    "inventory_slot11_quantity",
-                    "inventory_slot12",
-                    "inventory_slot12_quantity",
-                    "inventory_slot13",
-                    "inventory_slot13_quantity",
-                    "inventory_slot14",
-                    "inventory_slot14_quantity",
-                    "inventory_slot15",
-                    "inventory_slot15_quantity",
-                    "inventory_slot16",
-                    "inventory_slot16_quantity",
-                    "inventory_slot17",
-                    "inventory_slot17_quantity",
-                    "inventory_slot18",
-                    "inventory_slot18_quantity",
-                    "inventory_slot19",
-                    "inventory_slot19_quantity",
-                    "inventory_slot20",
-                    "inventory_slot20_quantity"
+                    "inventory_max_items"
                 ],
                 "title": "CharacterSchema"
             },
@@ -3440,15 +3227,11 @@
                         "title": "Remaining Seconds",
                         "description": "The remaining seconds of the cooldown."
                     },
-                    "totalSeconds": {
-                        "type": "integer",
-                        "title": "Totalseconds",
-                        "description": "Deprecated** The total seconds of the cooldown."
-                    },
-                    "remainingSeconds": {
-                        "type": "integer",
-                        "title": "Remainingseconds",
-                        "description": "Deprecated** The remaining seconds of the cooldown."
+                    "started_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Started At",
+                        "description": "The start of the cooldown."
                     },
                     "expiration": {
                         "type": "string",
@@ -3481,8 +3264,7 @@
                 "required": [
                     "total_seconds",
                     "remaining_seconds",
-                    "totalSeconds",
-                    "remainingSeconds",
+                    "started_at",
                     "expiration",
                     "reason"
                 ],
@@ -3491,34 +3273,20 @@
             "CraftSchema": {
                 "properties": {
                     "skill": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "enum": [
-                                    "weaponcrafting",
-                                    "gearcrafting",
-                                    "jewelrycrafting",
-                                    "cooking",
-                                    "woodcutting",
-                                    "mining"
-                                ]
-                            },
-                            {
-                                "type": "null"
-                            }
+                        "type": "string",
+                        "enum": [
+                            "weaponcrafting",
+                            "gearcrafting",
+                            "jewelrycrafting",
+                            "cooking",
+                            "woodcutting",
+                            "mining"
                         ],
                         "title": "Skill code",
                         "description": "Skill required to craft the item."
                     },
                     "level": {
-                        "anyOf": [
-                            {
-                                "type": "integer"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ],
+                        "type": "integer",
                         "title": "Level",
                         "description": "The skill level required to craft the item."
                     },
@@ -3531,14 +3299,7 @@
                         "description": "List of items required to craft the item."
                     },
                     "quantity": {
-                        "anyOf": [
-                            {
-                                "type": "integer"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ],
+                        "type": "integer",
                         "title": "Quantity",
                         "description": "Quantity of items crafted."
                     }
@@ -3567,6 +3328,73 @@
                     "code"
                 ],
                 "title": "CraftingSchema"
+            },
+            "DataPage_ActiveEventSchema_": {
+                "properties": {
+                    "data": {
+                        "items": {
+                            "$ref": "#/components/schemas/ActiveEventSchema"
+                        },
+                        "type": "array",
+                        "title": "Data"
+                    },
+                    "total": {
+                        "anyOf": [
+                            {
+                                "type": "integer",
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Total"
+                    },
+                    "page": {
+                        "anyOf": [
+                            {
+                                "type": "integer",
+                                "minimum": 1.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Page"
+                    },
+                    "size": {
+                        "anyOf": [
+                            {
+                                "type": "integer",
+                                "minimum": 1.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Size"
+                    },
+                    "pages": {
+                        "anyOf": [
+                            {
+                                "type": "integer",
+                                "minimum": 0.0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Pages"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "data",
+                    "total",
+                    "page",
+                    "size"
+                ],
+                "title": "DataPage[ActiveEventSchema]"
             },
             "DataPage_CharacterSchema_": {
                 "properties": {
@@ -3634,73 +3462,6 @@
                     "size"
                 ],
                 "title": "DataPage[CharacterSchema]"
-            },
-            "DataPage_EventSchema_": {
-                "properties": {
-                    "data": {
-                        "items": {
-                            "$ref": "#/components/schemas/EventSchema"
-                        },
-                        "type": "array",
-                        "title": "Data"
-                    },
-                    "total": {
-                        "anyOf": [
-                            {
-                                "type": "integer",
-                                "minimum": 0.0
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ],
-                        "title": "Total"
-                    },
-                    "page": {
-                        "anyOf": [
-                            {
-                                "type": "integer",
-                                "minimum": 1.0
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ],
-                        "title": "Page"
-                    },
-                    "size": {
-                        "anyOf": [
-                            {
-                                "type": "integer",
-                                "minimum": 1.0
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ],
-                        "title": "Size"
-                    },
-                    "pages": {
-                        "anyOf": [
-                            {
-                                "type": "integer",
-                                "minimum": 0.0
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ],
-                        "title": "Pages"
-                    }
-                },
-                "type": "object",
-                "required": [
-                    "data",
-                    "total",
-                    "page",
-                    "size"
-                ],
-                "title": "DataPage[EventSchema]"
             },
             "DataPage_GEItemSchema_": {
                 "properties": {
@@ -4171,6 +3932,23 @@
                 ],
                 "title": "DataPage[SimpleItemSchema]"
             },
+            "DeleteCharacterSchema": {
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "maxLength": 12,
+                        "minLength": 3,
+                        "pattern": "^[a-zA-Z0-9_-]+$",
+                        "title": "Name",
+                        "description": "Character name."
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name"
+                ],
+                "title": "DeleteCharacterSchema"
+            },
             "DeleteItemResponseSchema": {
                 "properties": {
                     "data": {
@@ -4232,37 +4010,6 @@
                     "quantity"
                 ],
                 "title": "DepositWithdrawGoldSchema"
-            },
-            "DestinationResponseSchema": {
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "title": "Name",
-                        "description": "The name of the destination."
-                    },
-                    "x": {
-                        "type": "integer",
-                        "title": "X",
-                        "description": "The x coordinate of the destination."
-                    },
-                    "y": {
-                        "type": "integer",
-                        "title": "Y",
-                        "description": "The y coordinate of the destination."
-                    },
-                    "content": {
-                        "title": "Content",
-                        "description": "Content of the destination."
-                    }
-                },
-                "type": "object",
-                "required": [
-                    "name",
-                    "x",
-                    "y",
-                    "content"
-                ],
-                "title": "DestinationResponseSchema"
             },
             "DestinationSchema": {
                 "properties": {
@@ -4445,55 +4192,6 @@
                     "data"
                 ],
                 "title": "EquipmentResponseSchema"
-            },
-            "EventSchema": {
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "title": "Name",
-                        "description": "Name of the event."
-                    },
-                    "map": {
-                        "allOf": [
-                            {
-                                "$ref": "#/components/schemas/MapSchema"
-                            }
-                        ],
-                        "description": "Map of the event."
-                    },
-                    "previous_skin": {
-                        "type": "string",
-                        "title": "Previous Skin",
-                        "description": "Previous map skin."
-                    },
-                    "duration": {
-                        "type": "integer",
-                        "title": "Duration",
-                        "description": "Duration in minutes."
-                    },
-                    "expiration": {
-                        "type": "string",
-                        "format": "date-time",
-                        "title": "Expiration",
-                        "description": "Expiration datetime."
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "title": "Created At",
-                        "description": "Start datetime."
-                    }
-                },
-                "type": "object",
-                "required": [
-                    "name",
-                    "map",
-                    "previous_skin",
-                    "duration",
-                    "expiration",
-                    "created_at"
-                ],
-                "title": "EventSchema"
             },
             "FightSchema": {
                 "properties": {
@@ -5488,12 +5186,16 @@
                     },
                     "version": {
                         "type": "string",
-                        "title": "Version",
-                        "description": "Game version."
+                        "title": "Version"
                     },
                     "characters_online": {
                         "type": "integer",
                         "title": "Characters Online"
+                    },
+                    "server_time": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Server Time"
                     },
                     "announcements": {
                         "items": {
@@ -5516,7 +5218,6 @@
                 "type": "object",
                 "required": [
                     "status",
-                    "version",
                     "last_wipe",
                     "next_wipe"
                 ],
