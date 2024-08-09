@@ -140,7 +140,7 @@ class CommonClientTest extends TestCase
                     ->build('/mock-endpoint')
                 ;
 
-                return $this->fetchVO($request, new class () implements FormatterInterface {
+                return $this->fetchVO($request, new class implements FormatterInterface {
                     /**
                      * @param mixed $data
                      * @return mixed

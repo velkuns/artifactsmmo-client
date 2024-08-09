@@ -18,8 +18,9 @@ class StatusFormatter implements FormatterInterface
     {
         return new VO\Status(
             $data->status,
-            $data->version,
+            $data->version ?? null,
             $data->characters_online ?? null,
+            $data->server_time ?? null,
             AnnouncementFormatter::formatItemList($data->announcements ?? []),
             $data->last_wipe,
             $data->next_wipe,
