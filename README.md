@@ -6,10 +6,13 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=velkuns_artifactsmmo-client&metric=coverage)](https://sonarcloud.io/dashboard?id=velkuns_artifactsmmo-client)
 
 ## Why?
+This SDK / Client is a wrapper to call Artifacts MMO API.
+Each clients methods call and endpoint and return a Value Object as defined in OpenAPI Spec from Artifacts MMO API.
 
-Template for new components
-²
+Artifacts MMO API Doc: https://api.artifactsmmo.com/docs/
 
+When POST endpoint need a BODY, an Body* Value Object (VO) is required to call the endpoint.
+If any query param is available, you can also pass it to the endpoint (PHP doc is set for params with name in this case)
 
 ## Installation
 

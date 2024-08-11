@@ -1,5 +1,5 @@
 {
-  "name": "velkuns/artifactmmo-client",
+  "name": "velkuns/artifactsmmo-client",
   "description": "PHP Client for Artifacts MMO Game Code",
   "type": "library",
   "minimum-stability": "stable",

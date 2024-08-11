@@ -17,6 +17,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ----
 
+## [1.0.2] - 2024-08-11
+[1.0.2]: https://github.com/velkuns/artifactsmmo-client/compare/1.0.1...1.0.2
+### Changed
+- Fix typo in package name for packagist
+
+## [1.0.1] - 2024-08-11
+[1.0.1]: https://github.com/velkuns/artifactsmmo-client/compare/1.0.0...1.0.1
+### Changed
+- Fix package name for packagist
+- Better endpoint path build
+### Added
+- README: add example with body VO usage
 
 ## [1.0.0] - 2024-08-09
 ### Added
