@@ -30,9 +30,7 @@ class MonstersClient extends AbstractClient
      */
     public function getMonster(string $code): VO\Monster
     {
-        $endpoint = '/monsters/{code}';
-        $replace = ['{code}' => $code];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/monsters/$code";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
         return $this->fetchVO($request, new Formatter\MonsterFormatter());
     }

@@ -18,9 +18,7 @@ class MyClient extends AbstractClient
      */
     public function actionMove(string $name, VO\Body\BodyDestination $body): VO\CharacterMovementData
     {
-        $endpoint = '/my/{name}/action/move';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/move";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\CharacterMovementDataFormatter());
     }
@@ -30,9 +28,7 @@ class MyClient extends AbstractClient
      */
     public function actionEquipItem(string $name, VO\Body\BodyEquip $body): VO\EquipRequest
     {
-        $endpoint = '/my/{name}/action/equip';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/equip";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\EquipRequestFormatter());
     }
@@ -42,9 +38,7 @@ class MyClient extends AbstractClient
      */
     public function actionUnequipItem(string $name, VO\Body\BodyUnequip $body): VO\EquipRequest
     {
-        $endpoint = '/my/{name}/action/unequip';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/unequip";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\EquipRequestFormatter());
     }
@@ -54,9 +48,7 @@ class MyClient extends AbstractClient
      */
     public function actionFight(string $name): VO\CharacterFightData
     {
-        $endpoint = '/my/{name}/action/fight';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/fight";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'POST');
         return $this->fetchVO($request, new Formatter\CharacterFightDataFormatter());
     }
@@ -66,9 +58,7 @@ class MyClient extends AbstractClient
      */
     public function actionGathering(string $name): VO\SkillData
     {
-        $endpoint = '/my/{name}/action/gathering';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/gathering";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'POST');
         return $this->fetchVO($request, new Formatter\SkillDataFormatter());
     }
@@ -78,9 +68,7 @@ class MyClient extends AbstractClient
      */
     public function actionCrafting(string $name, VO\Body\BodyCrafting $body): VO\SkillData
     {
-        $endpoint = '/my/{name}/action/crafting';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/crafting";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\SkillDataFormatter());
     }
@@ -90,9 +78,7 @@ class MyClient extends AbstractClient
      */
     public function actionDepositBank(string $name, VO\Body\BodySimpleItem $body): VO\BankItem
     {
-        $endpoint = '/my/{name}/action/bank/deposit';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/bank/deposit";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\BankItemFormatter());
     }
@@ -102,9 +88,7 @@ class MyClient extends AbstractClient
      */
     public function actionDepositBankGold(string $name, VO\Body\BodyDepositWithdrawGold $body): VO\GoldTransaction
     {
-        $endpoint = '/my/{name}/action/bank/deposit/gold';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/bank/deposit/gold";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\GoldTransactionFormatter());
     }
@@ -114,9 +98,7 @@ class MyClient extends AbstractClient
      */
     public function actionRecycling(string $name, VO\Body\BodyRecycling $body): VO\RecyclingData
     {
-        $endpoint = '/my/{name}/action/recycling';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/recycling";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\RecyclingDataFormatter());
     }
@@ -126,9 +108,7 @@ class MyClient extends AbstractClient
      */
     public function actionWithdrawBank(string $name, VO\Body\BodySimpleItem $body): VO\BankItem
     {
-        $endpoint = '/my/{name}/action/bank/withdraw';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/bank/withdraw";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\BankItemFormatter());
     }
@@ -138,9 +118,7 @@ class MyClient extends AbstractClient
      */
     public function actionWithdrawBankGold(string $name, VO\Body\BodyDepositWithdrawGold $body): VO\GoldTransaction
     {
-        $endpoint = '/my/{name}/action/bank/withdraw/gold';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/bank/withdraw/gold";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\GoldTransactionFormatter());
     }
@@ -150,9 +128,7 @@ class MyClient extends AbstractClient
      */
     public function actionGeBuyItem(string $name, VO\Body\BodyGETransactionItem $body): VO\GETransactionList
     {
-        $endpoint = '/my/{name}/action/ge/buy';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/ge/buy";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\GETransactionListFormatter());
     }
@@ -162,9 +138,7 @@ class MyClient extends AbstractClient
      */
     public function actionGeSellItem(string $name, VO\Body\BodyGETransactionItem $body): VO\GETransactionList
     {
-        $endpoint = '/my/{name}/action/ge/sell';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/ge/sell";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\GETransactionListFormatter());
     }
@@ -174,9 +148,7 @@ class MyClient extends AbstractClient
      */
     public function actionAcceptNewTask(string $name): VO\TaskData
     {
-        $endpoint = '/my/{name}/action/task/new';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/task/new";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'POST');
         return $this->fetchVO($request, new Formatter\TaskDataFormatter());
     }
@@ -186,9 +158,7 @@ class MyClient extends AbstractClient
      */
     public function actionCompleteTask(string $name): VO\TaskRewardData
     {
-        $endpoint = '/my/{name}/action/task/complete';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/task/complete";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'POST');
         return $this->fetchVO($request, new Formatter\TaskRewardDataFormatter());
     }
@@ -198,9 +168,7 @@ class MyClient extends AbstractClient
      */
     public function actionTaskExchange(string $name): VO\TaskRewardData
     {
-        $endpoint = '/my/{name}/action/task/exchange';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/task/exchange";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'POST');
         return $this->fetchVO($request, new Formatter\TaskRewardDataFormatter());
     }
@@ -210,9 +178,7 @@ class MyClient extends AbstractClient
      */
     public function actionDeleteItem(string $name, VO\Body\BodySimpleItem $body): VO\DeleteItem
     {
-        $endpoint = '/my/{name}/action/delete';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/my/$name/action/delete";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\DeleteItemFormatter());
     }

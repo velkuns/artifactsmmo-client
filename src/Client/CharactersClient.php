@@ -50,9 +50,7 @@ class CharactersClient extends AbstractClient
      */
     public function getCharacter(string $name): VO\Character
     {
-        $endpoint = '/characters/{name}';
-        $replace = ['{name}' => $name];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/characters/$name";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
         return $this->fetchVO($request, new Formatter\CharacterFormatter());
     }

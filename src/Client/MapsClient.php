@@ -30,9 +30,7 @@ class MapsClient extends AbstractClient
      */
     public function getMap(int $x, int $y): VO\Map
     {
-        $endpoint = '/maps/{x}/{y}';
-        $replace = ['{x}' => $x, '{y}' => $y];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/maps/$x/$y";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
         return $this->fetchVO($request, new Formatter\MapFormatter());
     }

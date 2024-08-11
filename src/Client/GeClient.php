@@ -30,9 +30,7 @@ class GeClient extends AbstractClient
      */
     public function getGeItem(string $code): VO\GEItem
     {
-        $endpoint = '/ge/{code}';
-        $replace = ['{code}' => $code];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/ge/$code";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
         return $this->fetchVO($request, new Formatter\GEItemFormatter());
     }

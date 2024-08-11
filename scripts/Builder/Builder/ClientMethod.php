@@ -15,6 +15,7 @@ use cebe\openapi\spec\Parameter;
 use PhpParser\Builder\Method;
 use PhpParser\BuilderFactory;
 use PhpParser\Node\Expr\Assign;
+use PhpParser\Node\Scalar\String_;
 use PhpParser\Node\Stmt\Return_;
 use Velkuns\ArtifactsMMO\Script\Builder\Enum\OperationType;
 
@@ -25,35 +26,22 @@ class ClientMethod extends Method
      */
     public function addAssignEndpoint(string $path, array $pathParams): self
     {
-        $factory = new BuilderFactory();
-
+        $factory     = new BuilderFactory();
         $endpointVar = $factory->var('endpoint');
-        $this->addStmt(new Assign($endpointVar, $factory->val($path)));
 
         if (empty($pathParams)) {
+            $this->addStmt(new Assign($endpointVar, new String_($path)));
+
             return $this;
         }
 
-        //~ If necessary, add statement to replace endpoint path var by variables from method params
+        //~ Use variable in path
         $replace = [];
         foreach ($pathParams as $pathParam) {
-            $replace['{' . $pathParam->name . '}'] = $factory->var($pathParam->name);
+            $replace['{' . $pathParam->name . '}'] = '$' . $pathParam->name;
         }
-        $replaceVar = $factory->var('replace');
-        $this->addStmt(new Assign($replaceVar, $factory->val($replace)));
-        $this->addStmt(
-            new Assign(
-                $endpointVar,
-                $factory->funcCall(
-                    '\str_replace',
-                    [
-                        $factory->funcCall('\array_keys', [$replaceVar]),
-                        $factory->funcCall('\array_values', [$replaceVar]),
-                        $endpointVar,
-                    ],
-                ),
-            ),
-        );
+        $path = \str_replace(\array_keys($replace), \array_values($replace), $path);
+        $this->addStmt(new Assign($endpointVar, new String_($path, ['kind' => String_::KIND_DOUBLE_QUOTED, 'noEscape' => true])));
 
         return $this;
     }

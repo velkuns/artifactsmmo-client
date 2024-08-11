@@ -14,9 +14,21 @@ namespace Velkuns\ArtifactsMMO\Script\Builder\Printer;
 use PhpParser\PrettyPrinter\Standard;
 use PhpParser\Node\Expr;
 use PhpParser\Node\Stmt;
+use PhpParser\Node\Scalar;
 
 class CustomStandard extends Standard
 {
+    protected function pScalar_String(Scalar\String_ $node)
+    {
+        $kind     = $node->getAttribute('kind', Scalar\String_::KIND_SINGLE_QUOTED);
+        $noEscape = $node->getAttribute('noEscape', false);
+
+        if ($kind === Scalar\String_::KIND_DOUBLE_QUOTED && $noEscape === true) {
+            return '"' . $node->value . '"';
+        }
+
+        return parent::pScalar_String($node);
+    }
     protected function pExpr_Array(Expr\Array_ $node)
     {
         if (empty($this->options['arrayMultiline'])) {

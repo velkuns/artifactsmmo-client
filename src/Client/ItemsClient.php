@@ -30,9 +30,7 @@ class ItemsClient extends AbstractClient
      */
     public function getItem(string $code): VO\SingleItem
     {
-        $endpoint = '/items/{code}';
-        $replace = ['{code}' => $code];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/items/$code";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
         return $this->fetchVO($request, new Formatter\SingleItemFormatter());
     }

@@ -24,6 +24,7 @@ composer require velkuns/artifactsmmo-client
 ## Usage
 
 Usage:
+
 ```php
 <?php
 
@@ -35,8 +36,11 @@ use Eureka\Component\Curl\HttpClient;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Log\NullLogger;
 use Velkuns\ArtifactsMMO\Client\Client;
+use Velkuns\ArtifactsMMO\Client\MyClient;
 use Velkuns\ArtifactsMMO\Config\ArtifactsMMOConfig;
 use Velkuns\ArtifactsMMO\Request\RequestBuilder;
+use Velkuns\ArtifactsMMO\VO\Body\BodyCrafting;
+use Velkuns\ArtifactsMMO\VO\Body\BodyDestination;
 
 require_once(__DIR__ . '/../vendor/autoload.php');
 
@@ -62,6 +66,12 @@ $status = $client->getStatus(); // Get status (VO\Status);
 echo "Server is $status->status\n";
 echo "Number of characters online: $status->charactersOnline\n";
 
+//~ Move a character
+$myClient = new MyClient($httpClient, $logger, $requestBuilder);
+$myClient->actionMove('character_name', new BodyDestination(1, 1));
+
+//~ Crafting an item
+$myClient->actionCrafting('character_name', new BodyCrafting('wooden_staff', 1));
 ```
 
 

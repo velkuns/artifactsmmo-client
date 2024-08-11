@@ -30,9 +30,7 @@ class ResourcesClient extends AbstractClient
      */
     public function getResource(string $code): VO\Resource
     {
-        $endpoint = '/resources/{code}';
-        $replace = ['{code}' => $code];
-        $endpoint = \str_replace(\array_keys($replace), \array_values($replace), $endpoint);
+        $endpoint = "/resources/$code";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
         return $this->fetchVO($request, new Formatter\ResourceFormatter());
     }
