@@ -1,6 +1,6 @@
 # artifactsmmo-client
 [![Current version](https://img.shields.io/packagist/v/velkuns/artifactsmmo-client.svg?logo=composer)](https://packagist.org/packages/velkuns/artifactsmmo-client)
-[![Supported PHP version](https://img.shields.io/static/v1?logo=php&label=PHP&message=8.1%20-%208.2&color=777bb4)](https://packagist.org/packages/velkuns/artifactsmmo-client)
+[![Supported PHP version](https://img.shields.io/static/v1?logo=php&label=PHP&message=8.1%20-%208.3&color=777bb4)](https://packagist.org/packages/velkuns/artifactsmmo-client)
 ![CI](https://github.com/velkuns/artifactsmmo-client/workflows/CI/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=velkuns_artifactsmmo-client&metric=alert_status)](https://sonarcloud.io/dashboard?id=velkuns_artifactsmmo-client)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=velkuns_artifactsmmo-client&metric=coverage)](https://sonarcloud.io/dashboard?id=velkuns_artifactsmmo-client)
