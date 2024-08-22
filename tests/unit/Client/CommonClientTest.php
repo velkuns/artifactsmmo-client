@@ -12,6 +12,8 @@ declare(strict_types=1);
 namespace Velkuns\ArtifactsMMO\Tests\Unit\Client;
 
 use Velkuns\ArtifactsMMO\Client\AbstractClient;
+use Velkuns\ArtifactsMMO\Exception\Api\CooldownException;
+use Velkuns\ArtifactsMMO\Exception\ArtifactsMMOApiException;
 use Velkuns\ArtifactsMMO\Exception\ArtifactsMMOClientException;
 use Velkuns\ArtifactsMMO\Formatter\FormatterInterface;
 use Velkuns\ArtifactsMMO\Request\RequestBuilder;
@@ -32,7 +34,7 @@ class CommonClientTest extends TestCase
     /**
      * @throws Exception
      */
-    public function testAArtifactsMMOClientExceptionIsThrownWhenApiReturnAnErrorResponseWithoutAnErrorContent(): void
+    public function testArtifactsMMOClientExceptionIsThrownWhenApiReturnAnErrorResponseWithoutAnErrorContent(): void
     {
         $mockClient = $this->getMockClient(400);
 
@@ -40,11 +42,22 @@ class CommonClientTest extends TestCase
         $this->expectException(ArtifactsMMOClientException::class);
         $mockClient->getEndpoint();
     }
+    /**
+     * @throws Exception
+     */
+    public function testArtifactsMMOApiExceptionIsThrownWhenApiReturnAnErrorCode409(): void
+    {
+        $mockClient = $this->getMockClient(499, '{"error":{"message": "Character in cooldown.","code": 499}}');
+
+        $this->expectExceptionCode(499);
+        $this->expectException(CooldownException::class);
+        $mockClient->getEndpoint();
+    }
 
     /**
      * @throws Exception
      */
-    public function testAArtifactsMMOClientExceptionIsThrownWhenApiReturnAnErrorResponseWithAnErrorContent(): void
+    public function testArtifactsMMOClientExceptionIsThrownWhenApiReturnAnErrorResponseWithAnErrorContent(): void
     {
         $mockClient = $this->getMockClient(503, '{"error":{"message": "Service Unavailable","status": "503"}}');
 
@@ -56,7 +69,7 @@ class CommonClientTest extends TestCase
     /**
      * @throws Exception
      */
-    public function testAArtifactsMMOClientExceptionIsThrownWhenApiAnInvalidJsonResponse(): void
+    public function testArtifactsMMOClientExceptionIsThrownWhenApiAnInvalidJsonResponse(): void
     {
         $mockClient = $this->getMockClient(200, '[}');
 
@@ -68,7 +81,7 @@ class CommonClientTest extends TestCase
     /**
      * @throws Exception
      */
-    public function testAArtifactsMMOClientExceptionWithSpecificExceptionCodeIsThrownWhenApiReturnAnErrorResponseWithAnErrorContentThatContainCodeError(): void
+    public function testArtifactsMMOClientExceptionWithSpecificExceptionCodeIsThrownWhenApiReturnAnErrorResponseWithAnErrorContentThatContainCodeError(): void
     {
         $mockClient = $this->getMockClient(503, '{"error":{"message": "Service Unavailable","status": "503","code": "123456"}}');
 
@@ -81,7 +94,7 @@ class CommonClientTest extends TestCase
     /**
      * @throws Exception
      */
-    public function testAArtifactsMMOClientExceptionWithSpecificExceptionMessageIsThrownWhenApiReturnAnErrorResponseWithAnErrorContentThatContainCodeError(): void
+    public function testArtifactsMMOClientExceptionWithSpecificExceptionMessageIsThrownWhenApiReturnAnErrorResponseWithAnErrorContentThatContainCodeError(): void
     {
         $mockClient = $this->getMockClient(503, '"Something is broken!"');
 
@@ -94,9 +107,9 @@ class CommonClientTest extends TestCase
     /**
      * @throws Exception
      */
-    public function testAArtifactsMMOClientExceptionWithCode9100IsThrownWhenHttpClientThrowAnException(): void
+    public function testArtifactsMMOClientExceptionWithCode9100IsThrownWhenHttpClientThrowAnException(): void
     {
-        $mockClient = $this->getMockClient(200, '', new class ('Timeout', 28) extends \Exception implements ClientExceptionInterface {});
+        $mockClient = $this->getMockClient(200, '', new class ('Timeout', 29) extends \Exception implements ClientExceptionInterface {});
 
         $this->expectExceptionCode(1100);
         $this->expectExceptionMessage('Timeout');
@@ -107,7 +120,7 @@ class CommonClientTest extends TestCase
     /**
      * @throws Exception
      */
-    public function testAArtifactsMMOClientExceptionIsThrownWhenNonObjectResponseIsReturnedForAnHttpCode200(): void
+    public function testArtifactsMMOClientExceptionIsThrownWhenNonObjectResponseIsReturnedForAnHttpCode200(): void
     {
         $mockClient = $this->getMockClient(200, '"A string as response for 200 Http code"');
 
@@ -136,16 +149,14 @@ class CommonClientTest extends TestCase
              */
             public function getEndpoint(): mixed
             {
-                $request = $this->getRequestBuilder()
-                    ->build('/mock-endpoint')
-                ;
+                $request = $this->getRequestBuilder()->build('/mock-endpoint');
 
                 return $this->fetchVO($request, new class implements FormatterInterface {
                     /**
-                     * @param mixed $data
+                     * @param \stdClass $data
                      * @return mixed
                      */
-                    public function format($data)
+                    public function format(\stdClass $data)
                     {
                         return $data;
                     }
