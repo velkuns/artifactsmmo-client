@@ -22,6 +22,7 @@ class GEItemFormatter implements FormatterInterface, ListFormatterInterface
             $data->stock,
             $data->sell_price ?? null,
             $data->buy_price ?? null,
+            $data->max_quantity,
         );
     }
 }

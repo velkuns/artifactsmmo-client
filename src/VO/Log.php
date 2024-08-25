@@ -18,7 +18,7 @@ class Log implements JsonSerializable
         public readonly string $description,
         public readonly string $content,
         public readonly int $cooldown,
-        public readonly string $cooldownExpiration,
+        public readonly null|string $cooldownExpiration,
         public readonly string $createdAt,
     ) {}
 
@@ -30,7 +30,7 @@ class Log implements JsonSerializable
      *     description: string,
      *     content: string,
      *     cooldown: int,
-     *     cooldownExpiration: string,
+     *     cooldownExpiration: null|string,
      *     createdAt: string,
      * }
      */

@@ -20,7 +20,7 @@ class ItemsClient extends AbstractClient
      */
     public function getAllItems(array $query = []): array
     {
-        $endpoint = '/items/';
+        $endpoint = '/items';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
         return $this->fetchVOList($request, new Formatter\ItemFormatter());
     }

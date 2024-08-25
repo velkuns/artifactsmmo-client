@@ -11,15 +11,17 @@ use Velkuns\ArtifactsMMO\Formatter;
 use Velkuns\ArtifactsMMO\VO;
 use JsonException;
 
-class TokenClient extends AbstractClient
+class LeaderboardClient extends AbstractClient
 {
     /**
+     * @param array{sort?:string, page?:int, size?:int} $query
+     * @return VO\CharacterLeaderboard[]
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function generateToken(): VO\TokenResponse
+    public function getLeaderboard(array $query = []): array
     {
-        $endpoint = '/token';
-        $request = $this->getRequestBuilder()->build($endpoint, method: 'POST');
-        return $this->fetchVO($request, new Formatter\TokenResponseFormatter());
+        $endpoint = '/leaderboard';
+        $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
+        return $this->fetchVOList($request, new Formatter\CharacterLeaderboardFormatter());
     }
 }

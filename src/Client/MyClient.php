@@ -76,21 +76,21 @@ class MyClient extends AbstractClient
     /**
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function actionDepositBank(string $name, VO\Body\BodySimpleItem $body): VO\BankItem
+    public function actionDepositBank(string $name, VO\Body\BodySimpleItem $body): VO\BankItemTransaction
     {
         $endpoint = "/my/$name/action/bank/deposit";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
-        return $this->fetchVO($request, new Formatter\BankItemFormatter());
+        return $this->fetchVO($request, new Formatter\BankItemTransactionFormatter());
     }
 
     /**
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function actionDepositBankGold(string $name, VO\Body\BodyDepositWithdrawGold $body): VO\GoldTransaction
+    public function actionDepositBankGold(string $name, VO\Body\BodyDepositWithdrawGold $body): VO\BankGoldTransaction
     {
         $endpoint = "/my/$name/action/bank/deposit/gold";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
-        return $this->fetchVO($request, new Formatter\GoldTransactionFormatter());
+        return $this->fetchVO($request, new Formatter\BankGoldTransactionFormatter());
     }
 
     /**
@@ -106,21 +106,21 @@ class MyClient extends AbstractClient
     /**
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function actionWithdrawBank(string $name, VO\Body\BodySimpleItem $body): VO\BankItem
+    public function actionWithdrawBank(string $name, VO\Body\BodySimpleItem $body): VO\BankItemTransaction
     {
         $endpoint = "/my/$name/action/bank/withdraw";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
-        return $this->fetchVO($request, new Formatter\BankItemFormatter());
+        return $this->fetchVO($request, new Formatter\BankItemTransactionFormatter());
     }
 
     /**
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function actionWithdrawBankGold(string $name, VO\Body\BodyDepositWithdrawGold $body): VO\GoldTransaction
+    public function actionWithdrawBankGold(string $name, VO\Body\BodyDepositWithdrawGold $body): VO\BankGoldTransaction
     {
         $endpoint = "/my/$name/action/bank/withdraw/gold";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
-        return $this->fetchVO($request, new Formatter\GoldTransactionFormatter());
+        return $this->fetchVO($request, new Formatter\BankGoldTransactionFormatter());
     }
 
     /**
@@ -141,6 +141,16 @@ class MyClient extends AbstractClient
         $endpoint = "/my/$name/action/ge/sell";
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\GETransactionListFormatter());
+    }
+
+    /**
+     * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
+     */
+    public function actionBuyBankExpansion(string $name): VO\BankExtensionTransaction
+    {
+        $endpoint = "/my/$name/action/bank/buy_expansion";
+        $request = $this->getRequestBuilder()->build($endpoint, method: 'POST');
+        return $this->fetchVO($request, new Formatter\BankExtensionTransactionFormatter());
     }
 
     /**
@@ -171,6 +181,16 @@ class MyClient extends AbstractClient
         $endpoint = "/my/$name/action/task/exchange";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'POST');
         return $this->fetchVO($request, new Formatter\TaskRewardDataFormatter());
+    }
+
+    /**
+     * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
+     */
+    public function actionTaskCancel(string $name): VO\TaskCancelled
+    {
+        $endpoint = "/my/$name/action/task/cancel";
+        $request = $this->getRequestBuilder()->build($endpoint, method: 'POST');
+        return $this->fetchVO($request, new Formatter\TaskCancelledFormatter());
     }
 
     /**
@@ -207,6 +227,16 @@ class MyClient extends AbstractClient
     }
 
     /**
+     * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
+     */
+    public function getBankDetails(): VO\Bank
+    {
+        $endpoint = '/my/bank';
+        $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
+        return $this->fetchVO($request, new Formatter\BankFormatter());
+    }
+
+    /**
      * @param array{item_code?:string, page?:int, size?:int} $query
      * @return VO\SimpleItem[]
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
@@ -216,16 +246,6 @@ class MyClient extends AbstractClient
         $endpoint = '/my/bank/items';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
         return $this->fetchVOList($request, new Formatter\SimpleItemFormatter());
-    }
-
-    /**
-     * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
-     */
-    public function getBankGolds(): VO\Gold
-    {
-        $endpoint = '/my/bank/gold';
-        $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
-        return $this->fetchVO($request, new Formatter\GoldFormatter());
     }
 
     /**

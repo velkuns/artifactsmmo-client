@@ -11,27 +11,27 @@ use Velkuns\ArtifactsMMO\Formatter;
 use Velkuns\ArtifactsMMO\VO;
 use JsonException;
 
-class MapsClient extends AbstractClient
+class AchievementsClient extends AbstractClient
 {
     /**
-     * @param array{content_type?:string, content_code?:string, page?:int, size?:int} $query
-     * @return VO\Map[]
+     * @param array{type?:string, page?:int, size?:int} $query
+     * @return VO\BaseAchievement[]
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function getAllMaps(array $query = []): array
+    public function getAllAchievements(array $query = []): array
     {
-        $endpoint = '/maps';
+        $endpoint = '/achievements';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
-        return $this->fetchVOList($request, new Formatter\MapFormatter());
+        return $this->fetchVOList($request, new Formatter\BaseAchievementFormatter());
     }
 
     /**
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function getMap(int $x, int $y): VO\Map
+    public function getAchievement(string $code): VO\BaseAchievement
     {
-        $endpoint = "/maps/$x/$y";
+        $endpoint = "/achievements/$code";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
-        return $this->fetchVO($request, new Formatter\MapFormatter());
+        return $this->fetchVO($request, new Formatter\BaseAchievementFormatter());
     }
 }

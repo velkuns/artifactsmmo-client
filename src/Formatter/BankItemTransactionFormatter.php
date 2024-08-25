@@ -7,16 +7,16 @@ namespace Velkuns\ArtifactsMMO\Formatter;
 use Velkuns\ArtifactsMMO\VO;
 
 /**
- * @implements FormatterInterface<VO\BankItem>
+ * @implements FormatterInterface<VO\BankItemTransaction>
  */
-class BankItemFormatter implements FormatterInterface
+class BankItemTransactionFormatter implements FormatterInterface
 {
-    /** @use FormatterTrait<VO\BankItem> */
+    /** @use FormatterTrait<VO\BankItemTransaction> */
     use FormatterTrait;
 
-    public static function formatItem(\stdClass $data): VO\BankItem
+    public static function formatItem(\stdClass $data): VO\BankItemTransaction
     {
-        return new VO\BankItem(
+        return new VO\BankItemTransaction(
             CooldownFormatter::formatItem($data->cooldown),
             ItemFormatter::formatItem($data->item),
             SimpleItemFormatter::formatItemList($data->bank),

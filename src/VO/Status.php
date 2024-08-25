@@ -11,14 +11,15 @@ class Status implements JsonSerializable
 {
     use JsonSerializableTrait;
     /**
-     * @param null|Announcement[] $announcements
+     * @param Announcement[] $announcements
      */
     public function __construct(
         public readonly string $status,
         public readonly null|string $version,
-        public readonly null|int $charactersOnline,
-        public readonly null|string $serverTime,
-        public readonly null|array $announcements,
+        public readonly int $maxLevel,
+        public readonly int $charactersOnline,
+        public readonly string $serverTime,
+        public readonly array $announcements,
         public readonly string $lastWipe,
         public readonly string $nextWipe,
     ) {}
@@ -27,9 +28,10 @@ class Status implements JsonSerializable
      * @return array{
      *     status: string,
      *     version: null|string,
-     *     charactersOnline: null|int,
-     *     serverTime: null|string,
-     *     announcements: null|Announcement[],
+     *     maxLevel: int,
+     *     charactersOnline: int,
+     *     serverTime: string,
+     *     announcements: Announcement[],
      *     lastWipe: string,
      *     nextWipe: string,
      * }
@@ -39,6 +41,7 @@ class Status implements JsonSerializable
         return [
             'status' => $this->status,
             'version' => $this->version,
+            'maxLevel' => $this->maxLevel,
             'charactersOnline' => $this->charactersOnline,
             'serverTime' => $this->serverTime,
             'announcements' => $this->announcements,

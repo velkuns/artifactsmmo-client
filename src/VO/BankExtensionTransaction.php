@@ -7,20 +7,20 @@ namespace Velkuns\ArtifactsMMO\VO;
 use Eureka\Component\Serializer\JsonSerializableTrait;
 use JsonSerializable;
 
-class GoldTransaction implements JsonSerializable
+class BankExtensionTransaction implements JsonSerializable
 {
     use JsonSerializableTrait;
 
     public function __construct(
         public readonly Cooldown $cooldown,
-        public readonly Gold $bank,
+        public readonly BankExtension $transaction,
         public readonly Character $character,
     ) {}
 
     /**
      * @return array{
      *     cooldown: Cooldown,
-     *     bank: Gold,
+     *     transaction: BankExtension,
      *     character: Character,
      * }
      */
@@ -28,7 +28,7 @@ class GoldTransaction implements JsonSerializable
     ): array {
         return [
             'cooldown' => $this->cooldown,
-            'bank' => $this->bank,
+            'transaction' => $this->transaction,
             'character' => $this->character,
         ];
     }

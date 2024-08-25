@@ -16,6 +16,7 @@ class GEItem implements JsonSerializable
         public readonly int $stock,
         public readonly null|int $sellPrice,
         public readonly null|int $buyPrice,
+        public readonly int $maxQuantity,
     ) {}
 
     /**
@@ -24,6 +25,7 @@ class GEItem implements JsonSerializable
      *     stock: int,
      *     sellPrice: null|int,
      *     buyPrice: null|int,
+     *     maxQuantity: int,
      * }
      */
     public function jsonSerialize(
@@ -33,6 +35,7 @@ class GEItem implements JsonSerializable
             'stock' => $this->stock,
             'sellPrice' => $this->sellPrice,
             'buyPrice' => $this->buyPrice,
+            'maxQuantity' => $this->maxQuantity,
         ];
     }
 }

@@ -20,7 +20,7 @@ class MonstersClient extends AbstractClient
      */
     public function getAllMonsters(array $query = []): array
     {
-        $endpoint = '/monsters/';
+        $endpoint = '/monsters';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
         return $this->fetchVOList($request, new Formatter\MonsterFormatter());
     }

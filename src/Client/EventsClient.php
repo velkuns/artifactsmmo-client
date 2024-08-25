@@ -20,7 +20,7 @@ class EventsClient extends AbstractClient
      */
     public function getAllEvents(array $query = []): array
     {
-        $endpoint = '/events/';
+        $endpoint = '/events';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
         return $this->fetchVOList($request, new Formatter\ActiveEventFormatter());
     }
