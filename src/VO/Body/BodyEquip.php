@@ -14,12 +14,14 @@ class BodyEquip implements JsonSerializable
     public function __construct(
         public readonly string $code,
         public readonly string $slot,
+        public readonly int $quantity = 1,
     ) {}
 
     /**
      * @return array{
      *     code: string,
      *     slot: string,
+     *     quantity: int,
      * }
      */
     public function jsonSerialize(
@@ -27,6 +29,7 @@ class BodyEquip implements JsonSerializable
         return [
             'code' => $this->code,
             'slot' => $this->slot,
+            'quantity' => $this->quantity,
         ];
     }
 }

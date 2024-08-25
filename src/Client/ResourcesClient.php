@@ -20,7 +20,7 @@ class ResourcesClient extends AbstractClient
      */
     public function getAllResources(array $query = []): array
     {
-        $endpoint = '/resources/';
+        $endpoint = '/resources';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
         return $this->fetchVOList($request, new Formatter\ResourceFormatter());
     }

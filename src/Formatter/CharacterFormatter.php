@@ -23,7 +23,7 @@ class CharacterFormatter implements FormatterInterface, ListFormatterInterface
             $data->level,
             $data->xp,
             $data->max_xp,
-            $data->total_xp,
+            $data->achievements_points,
             $data->gold,
             $data->speed,
             $data->mining_level,

@@ -7,7 +7,7 @@ namespace Velkuns\ArtifactsMMO\VO;
 use Eureka\Component\Serializer\JsonSerializableTrait;
 use JsonSerializable;
 
-class BankItem implements JsonSerializable
+class BankItemTransaction implements JsonSerializable
 {
     use JsonSerializableTrait;
     /**

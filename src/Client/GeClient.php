@@ -20,7 +20,7 @@ class GeClient extends AbstractClient
      */
     public function getAllGeItems(array $query = []): array
     {
-        $endpoint = '/ge/';
+        $endpoint = '/ge';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
         return $this->fetchVOList($request, new Formatter\GEItemFormatter());
     }

@@ -17,6 +17,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ----
 
+## [2.0.0] - 2024-08-25
+[2.0.0]: https://github.com/velkuns/artifactsmmo-client/compare/1.1.0...2.0.0
+### Changed
+- Include all changed from Artifacts MMO v2.0.0
+
+----
+
 ## [1.1.0] - 2024-08-22
 [1.1.0]: https://github.com/velkuns/artifactsmmo-client/compare/1.0.2...1.1.0
 ### Added
