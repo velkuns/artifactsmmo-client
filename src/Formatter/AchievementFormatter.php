@@ -7,9 +7,10 @@ namespace Velkuns\ArtifactsMMO\Formatter;
 use Velkuns\ArtifactsMMO\VO;
 
 /**
+ * @implements FormatterInterface<VO\Achievement>
  * @implements ListFormatterInterface<VO\Achievement>
  */
-class AchievementFormatter implements ListFormatterInterface
+class AchievementFormatter implements ListFormatterInterface, FormatterInterface
 {
     /** @use FormatterTrait<VO\Achievement> */
     use FormatterTrait;
@@ -24,8 +25,7 @@ class AchievementFormatter implements ListFormatterInterface
             $data->type,
             $data->target,
             $data->total,
-            $data->current,
-            $data->completed_at,
+            AchievementRewardsFormatter::formatItem($data->rewards),
         );
     }
 }

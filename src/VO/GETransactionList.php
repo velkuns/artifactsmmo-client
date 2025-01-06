@@ -13,14 +13,14 @@ class GETransactionList implements JsonSerializable
 
     public function __construct(
         public readonly Cooldown $cooldown,
-        public readonly GETransaction $transaction,
+        public readonly GETransaction $order,
         public readonly Character $character,
     ) {}
 
     /**
      * @return array{
      *     cooldown: Cooldown,
-     *     transaction: GETransaction,
+     *     order: GETransaction,
      *     character: Character,
      * }
      */
@@ -28,7 +28,7 @@ class GETransactionList implements JsonSerializable
     ): array {
         return [
             'cooldown' => $this->cooldown,
-            'transaction' => $this->transaction,
+            'order' => $this->order,
             'character' => $this->character,
         ];
     }

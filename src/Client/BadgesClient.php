@@ -11,27 +11,27 @@ use Velkuns\ArtifactsMMO\Formatter;
 use Velkuns\ArtifactsMMO\VO;
 use JsonException;
 
-class GeClient extends AbstractClient
+class BadgesClient extends AbstractClient
 {
     /**
      * @param array{page?:int, size?:int} $query
-     * @return VO\GEItem[]
+     * @return VO\Badge[]
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function getAllGeItems(array $query = []): array
+    public function getAllBadges(array $query = []): array
     {
-        $endpoint = '/ge';
+        $endpoint = '/badges';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
-        return $this->fetchVOList($request, new Formatter\GEItemFormatter());
+        return $this->fetchVOList($request, new Formatter\BadgeFormatter());
     }
 
     /**
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function getGeItem(string $code): VO\GEItem
+    public function getBadge(string $code): VO\Badge
     {
-        $endpoint = "/ge/$code";
+        $endpoint = "/badges/$code";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
-        return $this->fetchVO($request, new Formatter\GEItemFormatter());
+        return $this->fetchVO($request, new Formatter\BadgeFormatter());
     }
 }

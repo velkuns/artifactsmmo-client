@@ -29,8 +29,8 @@ class RequestBuilder
 
     /**
      * @param string $endpoint
-     * @param array<string, int|int[]|float|string|string[]> $query
-     * @param array<string, int|int[]|float|string|string[]> $body
+     * @param array<string, bool|int|int[]|float|string|string[]|null> $query
+     * @param array<string, bool|int|int[]|float|string|string[]|null> $body
      * @param string $method
      * @return RequestInterface
      * @throws ArtifactsMMOComponentException

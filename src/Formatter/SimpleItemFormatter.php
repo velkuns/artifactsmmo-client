@@ -10,7 +10,7 @@ use Velkuns\ArtifactsMMO\VO;
  * @implements FormatterInterface<VO\SimpleItem>
  * @implements ListFormatterInterface<VO\SimpleItem>
  */
-class SimpleItemFormatter implements FormatterInterface, ListFormatterInterface
+class SimpleItemFormatter implements ListFormatterInterface, FormatterInterface
 {
     /** @use FormatterTrait<VO\SimpleItem> */
     use FormatterTrait;

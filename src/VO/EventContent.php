@@ -2,34 +2,31 @@
 
 declare (strict_types=1);
 
-namespace Velkuns\ArtifactsMMO\VO\Body;
+namespace Velkuns\ArtifactsMMO\VO;
 
 use Eureka\Component\Serializer\JsonSerializableTrait;
 use JsonSerializable;
 
-class BodyGETransactionItem implements JsonSerializable
+class EventContent implements JsonSerializable
 {
     use JsonSerializableTrait;
 
     public function __construct(
+        public readonly string $type,
         public readonly string $code,
-        public readonly int $quantity,
-        public readonly int $price,
     ) {}
 
     /**
      * @return array{
+     *     type: string,
      *     code: string,
-     *     quantity: int,
-     *     price: int,
      * }
      */
     public function jsonSerialize(
     ): array {
         return [
+            'type' => $this->type,
             'code' => $this->code,
-            'quantity' => $this->quantity,
-            'price' => $this->price,
         ];
     }
 }

@@ -7,7 +7,7 @@ namespace Velkuns\ArtifactsMMO\VO;
 use Eureka\Component\Serializer\JsonSerializableTrait;
 use JsonSerializable;
 
-class BaseAchievement implements JsonSerializable
+class AccountAchievement implements JsonSerializable
 {
     use JsonSerializableTrait;
 
@@ -19,6 +19,9 @@ class BaseAchievement implements JsonSerializable
         public readonly string $type,
         public readonly null|string $target,
         public readonly int $total,
+        public readonly AchievementRewards $rewards,
+        public readonly int $current,
+        public readonly null|string $completedAt,
     ) {}
 
     /**
@@ -30,6 +33,9 @@ class BaseAchievement implements JsonSerializable
      *     type: string,
      *     target: null|string,
      *     total: int,
+     *     rewards: AchievementRewards,
+     *     current: int,
+     *     completedAt: null|string,
      * }
      */
     public function jsonSerialize(
@@ -42,6 +48,9 @@ class BaseAchievement implements JsonSerializable
             'type' => $this->type,
             'target' => $this->target,
             'total' => $this->total,
+            'rewards' => $this->rewards,
+            'current' => $this->current,
+            'completedAt' => $this->completedAt,
         ];
     }
 }

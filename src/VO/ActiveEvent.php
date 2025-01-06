@@ -13,6 +13,7 @@ class ActiveEvent implements JsonSerializable
 
     public function __construct(
         public readonly string $name,
+        public readonly string $code,
         public readonly Map $map,
         public readonly string $previousSkin,
         public readonly int $duration,
@@ -23,6 +24,7 @@ class ActiveEvent implements JsonSerializable
     /**
      * @return array{
      *     name: string,
+     *     code: string,
      *     map: Map,
      *     previousSkin: string,
      *     duration: int,
@@ -34,6 +36,7 @@ class ActiveEvent implements JsonSerializable
     ): array {
         return [
             'name' => $this->name,
+            'code' => $this->code,
             'map' => $this->map,
             'previousSkin' => $this->previousSkin,
             'duration' => $this->duration,

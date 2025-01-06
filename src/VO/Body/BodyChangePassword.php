@@ -12,18 +12,21 @@ class BodyChangePassword implements JsonSerializable
     use JsonSerializableTrait;
 
     public function __construct(
-        public readonly string $password,
+        public readonly string $currentPassword,
+        public readonly string $newPassword,
     ) {}
 
     /**
      * @return array{
-     *     password: string,
+     *     currentPassword: string,
+     *     newPassword: string,
      * }
      */
     public function jsonSerialize(
     ): array {
         return [
-            'password' => $this->password,
+            'currentPassword' => $this->currentPassword,
+            'newPassword' => $this->newPassword,
         ];
     }
 }

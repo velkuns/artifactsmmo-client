@@ -8,8 +8,9 @@ use Velkuns\ArtifactsMMO\VO;
 
 /**
  * @implements FormatterInterface<VO\DropRate>
+ * @implements ListFormatterInterface<VO\DropRate>
  */
-class DropRateFormatter implements FormatterInterface
+class DropRateFormatter implements FormatterInterface, ListFormatterInterface
 {
     /** @use FormatterTrait<VO\DropRate> */
     use FormatterTrait;

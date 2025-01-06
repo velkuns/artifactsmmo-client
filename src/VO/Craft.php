@@ -14,7 +14,7 @@ class Craft implements JsonSerializable
      * @param null|SimpleItem[] $items
      */
     public function __construct(
-        public readonly null|string $skill,
+        public readonly string $skill,
         public readonly null|int $level,
         public readonly null|array $items,
         public readonly null|int $quantity,
@@ -22,7 +22,7 @@ class Craft implements JsonSerializable
 
     /**
      * @return array{
-     *     skill: null|string,
+     *     skill: string,
      *     level: null|int,
      *     items: null|SimpleItem[],
      *     quantity: null|int,

@@ -15,6 +15,7 @@ class Task implements JsonSerializable
         public readonly string $code,
         public readonly string $type,
         public readonly int $total,
+        public readonly Rewards $rewards,
     ) {}
 
     /**
@@ -22,6 +23,7 @@ class Task implements JsonSerializable
      *     code: string,
      *     type: string,
      *     total: int,
+     *     rewards: Rewards,
      * }
      */
     public function jsonSerialize(
@@ -30,6 +32,7 @@ class Task implements JsonSerializable
             'code' => $this->code,
             'type' => $this->type,
             'total' => $this->total,
+            'rewards' => $this->rewards,
         ];
     }
 }

@@ -34,18 +34,6 @@ class CharactersClient extends AbstractClient
     }
 
     /**
-     * @param array{page?:int, size?:int} $query
-     * @return VO\Character[]
-     * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
-     */
-    public function getAllCharacters(array $query = []): array
-    {
-        $endpoint = '/characters';
-        $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
-        return $this->fetchVOList($request, new Formatter\CharacterFormatter());
-    }
-
-    /**
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
     public function getCharacter(string $name): VO\Character
@@ -53,17 +41,5 @@ class CharactersClient extends AbstractClient
         $endpoint = "/characters/$name";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
         return $this->fetchVO($request, new Formatter\CharacterFormatter());
-    }
-
-    /**
-     * @param array{type?:string, completed?:boolean, page?:int, size?:int} $query
-     * @return VO\Achievement[]
-     * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
-     */
-    public function getCharacterAchievements(string $name, array $query = []): array
-    {
-        $endpoint = "/characters/$name/achievements";
-        $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
-        return $this->fetchVOList($request, new Formatter\AchievementFormatter());
     }
 }

@@ -15,23 +15,23 @@ class AchievementsClient extends AbstractClient
 {
     /**
      * @param array{type?:string, page?:int, size?:int} $query
-     * @return VO\BaseAchievement[]
+     * @return VO\Achievement[]
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
     public function getAllAchievements(array $query = []): array
     {
         $endpoint = '/achievements';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
-        return $this->fetchVOList($request, new Formatter\BaseAchievementFormatter());
+        return $this->fetchVOList($request, new Formatter\AchievementFormatter());
     }
 
     /**
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function getAchievement(string $code): VO\BaseAchievement
+    public function getAchievement(string $code): VO\Achievement
     {
         $endpoint = "/achievements/$code";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
-        return $this->fetchVO($request, new Formatter\BaseAchievementFormatter());
+        return $this->fetchVO($request, new Formatter\AchievementFormatter());
     }
 }

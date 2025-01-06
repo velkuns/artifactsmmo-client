@@ -17,6 +17,7 @@ class GETransactionFormatter implements FormatterInterface
     public static function formatItem(\stdClass $data): VO\GETransaction
     {
         return new VO\GETransaction(
+            $data->id,
             $data->code,
             $data->quantity,
             $data->price,

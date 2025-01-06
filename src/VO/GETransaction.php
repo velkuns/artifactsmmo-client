@@ -12,6 +12,7 @@ class GETransaction implements JsonSerializable
     use JsonSerializableTrait;
 
     public function __construct(
+        public readonly string $id,
         public readonly string $code,
         public readonly int $quantity,
         public readonly int $price,
@@ -20,6 +21,7 @@ class GETransaction implements JsonSerializable
 
     /**
      * @return array{
+     *     id: string,
      *     code: string,
      *     quantity: int,
      *     price: int,
@@ -29,6 +31,7 @@ class GETransaction implements JsonSerializable
     public function jsonSerialize(
     ): array {
         return [
+            'id' => $this->id,
             'code' => $this->code,
             'quantity' => $this->quantity,
             'price' => $this->price,

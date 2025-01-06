@@ -19,8 +19,7 @@ class Achievement implements JsonSerializable
         public readonly string $type,
         public readonly null|string $target,
         public readonly int $total,
-        public readonly int $current,
-        public readonly null|string $completedAt,
+        public readonly AchievementRewards $rewards,
     ) {}
 
     /**
@@ -32,8 +31,7 @@ class Achievement implements JsonSerializable
      *     type: string,
      *     target: null|string,
      *     total: int,
-     *     current: int,
-     *     completedAt: null|string,
+     *     rewards: AchievementRewards,
      * }
      */
     public function jsonSerialize(
@@ -46,8 +44,7 @@ class Achievement implements JsonSerializable
             'type' => $this->type,
             'target' => $this->target,
             'total' => $this->total,
-            'current' => $this->current,
-            'completedAt' => $this->completedAt,
+            'rewards' => $this->rewards,
         ];
     }
 }

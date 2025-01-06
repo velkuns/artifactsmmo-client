@@ -22,4 +22,26 @@ class AccountsClient extends AbstractClient
         $request = $this->getRequestBuilder()->build($endpoint, body: $body->jsonSerialize(), method: 'POST');
         return $this->fetchVO($request, new Formatter\ResponseFormatter());
     }
+
+    /**
+     * @param array{type?:string, completed?:bool, page?:int, size?:int} $query
+     * @return VO\AccountAchievement[]
+     * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
+     */
+    public function getAccountAchievements(string $account, array $query = []): array
+    {
+        $endpoint = "/accounts/$account/achievements";
+        $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
+        return $this->fetchVOList($request, new Formatter\AccountAchievementFormatter());
+    }
+
+    /**
+     * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
+     */
+    public function getAccount(string $account): VO\AccountDetails
+    {
+        $endpoint = "/accounts/$account";
+        $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
+        return $this->fetchVO($request, new Formatter\AccountDetailsFormatter());
+    }
 }

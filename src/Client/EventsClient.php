@@ -18,10 +18,22 @@ class EventsClient extends AbstractClient
      * @return VO\ActiveEvent[]
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
+    public function getAllActiveEvents(array $query = []): array
+    {
+        $endpoint = '/events/active';
+        $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
+        return $this->fetchVOList($request, new Formatter\ActiveEventFormatter());
+    }
+
+    /**
+     * @param array{page?:int, size?:int} $query
+     * @return VO\Event[]
+     * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
+     */
     public function getAllEvents(array $query = []): array
     {
         $endpoint = '/events';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
-        return $this->fetchVOList($request, new Formatter\ActiveEventFormatter());
+        return $this->fetchVOList($request, new Formatter\EventFormatter());
     }
 }

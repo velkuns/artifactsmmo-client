@@ -18,10 +18,22 @@ class LeaderboardClient extends AbstractClient
      * @return VO\CharacterLeaderboard[]
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function getLeaderboard(array $query = []): array
+    public function getCharactersLeaderboard(array $query = []): array
     {
-        $endpoint = '/leaderboard';
+        $endpoint = '/leaderboard/characters';
         $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
         return $this->fetchVOList($request, new Formatter\CharacterLeaderboardFormatter());
+    }
+
+    /**
+     * @param array{sort?:string, page?:int, size?:int} $query
+     * @return VO\AccountLeaderboard[]
+     * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
+     */
+    public function getAccountsLeaderboard(array $query = []): array
+    {
+        $endpoint = '/leaderboard/accounts';
+        $request = $this->getRequestBuilder()->build($endpoint, query: $query, method: 'GET');
+        return $this->fetchVOList($request, new Formatter\AccountLeaderboardFormatter());
     }
 }

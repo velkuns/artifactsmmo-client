@@ -18,6 +18,7 @@ class ActiveEventFormatter implements ListFormatterInterface
     {
         return new VO\ActiveEvent(
             $data->name,
+            $data->code,
             MapFormatter::formatItem($data->map),
             $data->previous_skin,
             $data->duration,
