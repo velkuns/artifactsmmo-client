@@ -287,7 +287,7 @@ class ClientBuilder
     {
         $type = $param->schema?->type ?? 'string';
 
-        return match($type) {
+        return match ($type) {
             'integer' => 'int',
             default   => $type,
         };
