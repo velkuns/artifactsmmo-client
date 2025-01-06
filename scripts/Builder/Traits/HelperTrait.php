@@ -73,8 +73,9 @@ trait HelperTrait
             return null;
         }
 
-        $type = match($type) {
+        $type = match ($type) {
             'integer' => 'int',
+            'boolean' => 'bool',
             'object'  => \str_replace('Schema', '', $schema->title),
             default   => $type,
         };

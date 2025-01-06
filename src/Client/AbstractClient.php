@@ -163,7 +163,7 @@ abstract class AbstractClient
 
     private function handleError(int $code, string $message): ArtifactsMMOApiException
     {
-        return match($code) {
+        return match ($code) {
             404 => new NotFoundException($message, $code),
             486 => new ActionInProgressException($message, $code),
             460 => new BankInsufficientGoldsException($message, $code),

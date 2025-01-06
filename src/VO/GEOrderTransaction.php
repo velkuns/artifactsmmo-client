@@ -7,20 +7,20 @@ namespace Velkuns\ArtifactsMMO\VO;
 use Eureka\Component\Serializer\JsonSerializableTrait;
 use JsonSerializable;
 
-class TaskRewardData implements JsonSerializable
+class GEOrderTransaction implements JsonSerializable
 {
     use JsonSerializableTrait;
 
     public function __construct(
         public readonly Cooldown $cooldown,
-        public readonly TaskReward $reward,
+        public readonly GEOrderCreated $order,
         public readonly Character $character,
     ) {}
 
     /**
      * @return array{
      *     cooldown: Cooldown,
-     *     reward: TaskReward,
+     *     order: GEOrderCreated,
      *     character: Character,
      * }
      */
@@ -28,7 +28,7 @@ class TaskRewardData implements JsonSerializable
     ): array {
         return [
             'cooldown' => $this->cooldown,
-            'reward' => $this->reward,
+            'order' => $this->order,
             'character' => $this->character,
         ];
     }

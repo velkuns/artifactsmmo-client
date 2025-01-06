@@ -22,6 +22,7 @@ class Item implements JsonSerializable
         public readonly string $description,
         public readonly null|array $effects,
         public readonly null|Craft $craft,
+        public readonly bool $tradeable,
     ) {}
 
     /**
@@ -34,6 +35,7 @@ class Item implements JsonSerializable
      *     description: string,
      *     effects: null|ItemEffect[],
      *     craft: null|Craft,
+     *     tradeable: bool,
      * }
      */
     public function jsonSerialize(
@@ -47,6 +49,7 @@ class Item implements JsonSerializable
             'description' => $this->description,
             'effects' => $this->effects,
             'craft' => $this->craft,
+            'tradeable' => $this->tradeable,
         ];
     }
 }

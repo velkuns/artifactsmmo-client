@@ -18,7 +18,7 @@ class GETransactionListFormatter implements FormatterInterface
     {
         return new VO\GETransactionList(
             CooldownFormatter::formatItem($data->cooldown),
-            GETransactionFormatter::formatItem($data->transaction),
+            GETransactionFormatter::formatItem($data->order),
             CharacterFormatter::formatItem($data->character),
         );
     }

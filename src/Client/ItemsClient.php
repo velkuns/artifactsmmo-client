@@ -28,10 +28,10 @@ class ItemsClient extends AbstractClient
     /**
      * @throws ArtifactsMMOClientException|ArtifactsMMOComponentException|ClientExceptionInterface|JsonException
      */
-    public function getItem(string $code): VO\SingleItem
+    public function getItem(string $code): VO\Item
     {
         $endpoint = "/items/$code";
         $request = $this->getRequestBuilder()->build($endpoint, method: 'GET');
-        return $this->fetchVO($request, new Formatter\SingleItemFormatter());
+        return $this->fetchVO($request, new Formatter\ItemFormatter());
     }
 }

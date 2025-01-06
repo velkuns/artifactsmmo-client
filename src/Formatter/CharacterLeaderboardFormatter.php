@@ -17,9 +17,10 @@ class CharacterLeaderboardFormatter implements ListFormatterInterface
     public static function formatItem(\stdClass $data): VO\CharacterLeaderboard
     {
         return new VO\CharacterLeaderboard(
+            $data->position,
             $data->name,
+            $data->account,
             $data->skin,
-            $data->achievements_points,
             $data->level,
             $data->total_xp,
             $data->mining_level,
@@ -36,6 +37,8 @@ class CharacterLeaderboardFormatter implements ListFormatterInterface
             $data->jewelrycrafting_total_xp,
             $data->cooking_level,
             $data->cooking_total_xp,
+            $data->alchemy_level,
+            $data->alchemy_total_xp,
             $data->gold,
         );
     }

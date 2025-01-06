@@ -12,9 +12,10 @@ class CharacterLeaderboard implements JsonSerializable
     use JsonSerializableTrait;
 
     public function __construct(
+        public readonly int $position,
         public readonly string $name,
+        public readonly string $account,
         public readonly string $skin,
-        public readonly int $achievementsPoints,
         public readonly int $level,
         public readonly int $totalXp,
         public readonly int $miningLevel,
@@ -31,14 +32,17 @@ class CharacterLeaderboard implements JsonSerializable
         public readonly int $jewelrycraftingTotalXp,
         public readonly int $cookingLevel,
         public readonly int $cookingTotalXp,
+        public readonly int $alchemyLevel,
+        public readonly int $alchemyTotalXp,
         public readonly int $gold,
     ) {}
 
     /**
      * @return array{
+     *     position: int,
      *     name: string,
+     *     account: string,
      *     skin: string,
-     *     achievementsPoints: int,
      *     level: int,
      *     totalXp: int,
      *     miningLevel: int,
@@ -55,15 +59,18 @@ class CharacterLeaderboard implements JsonSerializable
      *     jewelrycraftingTotalXp: int,
      *     cookingLevel: int,
      *     cookingTotalXp: int,
+     *     alchemyLevel: int,
+     *     alchemyTotalXp: int,
      *     gold: int,
      * }
      */
     public function jsonSerialize(
     ): array {
         return [
+            'position' => $this->position,
             'name' => $this->name,
+            'account' => $this->account,
             'skin' => $this->skin,
-            'achievementsPoints' => $this->achievementsPoints,
             'level' => $this->level,
             'totalXp' => $this->totalXp,
             'miningLevel' => $this->miningLevel,
@@ -80,6 +87,8 @@ class CharacterLeaderboard implements JsonSerializable
             'jewelrycraftingTotalXp' => $this->jewelrycraftingTotalXp,
             'cookingLevel' => $this->cookingLevel,
             'cookingTotalXp' => $this->cookingTotalXp,
+            'alchemyLevel' => $this->alchemyLevel,
+            'alchemyTotalXp' => $this->alchemyTotalXp,
             'gold' => $this->gold,
         ];
     }

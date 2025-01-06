@@ -18,7 +18,7 @@ class StatusFormatter implements FormatterInterface
     {
         return new VO\Status(
             $data->status,
-            $data->version ?? null,
+            $data->version,
             $data->max_level,
             $data->characters_online,
             $data->server_time,

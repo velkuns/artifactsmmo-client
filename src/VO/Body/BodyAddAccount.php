@@ -14,14 +14,14 @@ class BodyAddAccount implements JsonSerializable
     public function __construct(
         public readonly string $username,
         public readonly string $password,
-        public readonly string $email,
+        public readonly null|string $email,
     ) {}
 
     /**
      * @return array{
      *     username: string,
      *     password: string,
-     *     email: string,
+     *     email: null|string,
      * }
      */
     public function jsonSerialize(

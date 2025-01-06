@@ -7,26 +7,26 @@ namespace Velkuns\ArtifactsMMO\VO;
 use Eureka\Component\Serializer\JsonSerializableTrait;
 use JsonSerializable;
 
-class SingleItem implements JsonSerializable
+class EventMap implements JsonSerializable
 {
     use JsonSerializableTrait;
 
     public function __construct(
-        public readonly Item $item,
-        public readonly null|GEItem $ge,
+        public readonly int $x,
+        public readonly int $y,
     ) {}
 
     /**
      * @return array{
-     *     item: Item,
-     *     ge: null|GEItem,
+     *     x: int,
+     *     y: int,
      * }
      */
     public function jsonSerialize(
     ): array {
         return [
-            'item' => $this->item,
-            'ge' => $this->ge,
+            'x' => $this->x,
+            'y' => $this->y,
         ];
     }
 }

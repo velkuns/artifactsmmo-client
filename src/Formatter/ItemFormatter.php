@@ -26,6 +26,7 @@ class ItemFormatter implements FormatterInterface, ListFormatterInterface
             $data->description,
             ItemEffectFormatter::formatItemList($data->effects ?? []),
             isset($data->craft) ? CraftFormatter::formatItem($data->craft) : null,
+            $data->tradeable,
         );
     }
 }

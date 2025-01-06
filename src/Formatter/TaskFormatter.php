@@ -20,6 +20,7 @@ class TaskFormatter implements FormatterInterface
             $data->code,
             $data->type,
             $data->total,
+            RewardsFormatter::formatItem($data->rewards),
         );
     }
 }

@@ -15,7 +15,7 @@ class Status implements JsonSerializable
      */
     public function __construct(
         public readonly string $status,
-        public readonly null|string $version,
+        public readonly string $version,
         public readonly int $maxLevel,
         public readonly int $charactersOnline,
         public readonly string $serverTime,
@@ -27,7 +27,7 @@ class Status implements JsonSerializable
     /**
      * @return array{
      *     status: string,
-     *     version: null|string,
+     *     version: string,
      *     maxLevel: int,
      *     charactersOnline: int,
      *     serverTime: string,

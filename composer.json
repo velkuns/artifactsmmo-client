@@ -42,16 +42,16 @@
   "require-dev": {
     "cebe/php-openapi": "^1.7.0",
     "eureka/component-console": "^6.2.0",
-    "friendsofphp/php-cs-fixer": "^3.62.0",
+    "friendsofphp/php-cs-fixer": "^3.66.1",
     "lcobucci/clock": "^3.0.0",
     "maglnet/composer-require-checker": "^4.7.1",
-    "nikic/php-parser": "^4.19.1",
-    "nyholm/psr7": "^1.8.1",
+    "nikic/php-parser": "^4.19.4",
+    "nyholm/psr7": "^1.8.2",
     "eureka/component-curl": "^3.0.0",
-    "phpstan/phpstan": "^1.11.11",
-    "phpstan/phpstan-phpunit": "^1.4.0",
+    "phpstan/phpstan": "^1.12.15",
+    "phpstan/phpstan-phpunit": "^1.4.2",
     "phpunit/phpcov": "^9.0.2",
-    "phpunit/phpunit": "^10.5.30",
-    "shipmonk/composer-dependency-analyser": "^1.7.0"
+    "phpunit/phpunit": "^10.5.40",
+    "shipmonk/composer-dependency-analyser": "^1.8.2"
   }
 }
