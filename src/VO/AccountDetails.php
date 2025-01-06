@@ -11,13 +11,13 @@ class AccountDetails implements JsonSerializable
 {
     use JsonSerializableTrait;
     /**
-     * @param array<string|null> $badges
+     * @param null|string[] $badges
      */
     public function __construct(
         public readonly string $username,
         public readonly bool $subscribed,
         public readonly string $status,
-        public readonly array $badges,
+        public readonly null|array $badges,
         public readonly int $achievementsPoints,
         public readonly bool $banned,
         public readonly null|string $banReason,
@@ -28,7 +28,7 @@ class AccountDetails implements JsonSerializable
      *     username: string,
      *     subscribed: bool,
      *     status: string,
-     *     badges: array<string|null>,
+     *     badges: null|string[],
      *     achievementsPoints: int,
      *     banned: bool,
      *     banReason: null|string,

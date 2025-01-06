@@ -3904,7 +3904,9 @@
                         "description": "Member status."
                     },
                     "badges": {
-                        "items": {},
+                        "items": {
+                            "type": "string"
+                        },
                         "type": "array",
                         "title": "Badges",
                         "description": "Account badges."
@@ -8001,7 +8003,9 @@
                         "description": "Member status."
                     },
                     "badges": {
-                        "items": {},
+                        "items": {
+                            "type": "string"
+                        },
                         "type": "array",
                         "title": "Badges",
                         "description": "Account badges."
